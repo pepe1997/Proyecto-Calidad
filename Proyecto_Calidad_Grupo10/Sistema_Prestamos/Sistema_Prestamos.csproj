@@ -90,6 +90,9 @@
     <EmbeddedResource Include="Mantendedor\FrmConsolidado.resx">
       <DependentUpon>FrmConsolidado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantendedor\FrmCuenta.resx">
+      <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantendedor\FrmTipo_Cuenta.resx">
       <DependentUpon>FrmTipo_Cuenta.cs</DependentUpon>
     </EmbeddedResource>
