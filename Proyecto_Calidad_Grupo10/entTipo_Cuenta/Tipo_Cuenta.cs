@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace entTipo_Cuenta
 {
-    internal class Tipo_Cuenta
+    public class Tipo_Cuenta
     {
+        public string idTipo { get; set; }
+        public string nombTipo { get; set; }
     }
 }

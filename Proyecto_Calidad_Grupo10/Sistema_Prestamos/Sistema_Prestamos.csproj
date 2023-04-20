@@ -46,14 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Mantendedor\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Mantendedor\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantendedor\FrmConsolidado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantendedor\FrmConsolidado.Designer.cs">
+      <DependentUpon>FrmConsolidado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantendedor\FrmCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantendedor\FrmCuenta.Designer.cs">
+      <DependentUpon>FrmCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantendedor\FrmPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantendedor\FrmPrestamo.Designer.cs">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantendedor\FrmTipo_Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantendedor\FrmTipo_Cuenta.Designer.cs">
+      <DependentUpon>FrmTipo_Cuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaccion\FrmPlan_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaccion\FrmPlan_Pago.Designer.cs">
+      <DependentUpon>FrmPlan_Pago.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Mantendedor\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantendedor\FrmConsolidado.resx">
+      <DependentUpon>FrmConsolidado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantendedor\FrmTipo_Cuenta.resx">
+      <DependentUpon>FrmTipo_Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Principal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

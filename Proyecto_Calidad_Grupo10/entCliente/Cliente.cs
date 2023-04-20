@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace entCliente
 {
-    internal class Cliente
+    public class Cliente
     {
+        public string idCliente { get; set; }
+        public string dniCliente { get; set; }
+        public string apellCliente { get; set; }
+        public string nombCliente { get; set; }
+        public string direCliente { get; set; }
+        public string celCliente { get; set; }
     }
 }
