@@ -93,6 +93,9 @@
     <EmbeddedResource Include="Mantendedor\FrmCuenta.resx">
       <DependentUpon>FrmCuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantendedor\FrmPrestamo.resx">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantendedor\FrmTipo_Cuenta.resx">
       <DependentUpon>FrmTipo_Cuenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transaccion\FrmPlan_Pago.resx">
+      <DependentUpon>FrmPlan_Pago.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
