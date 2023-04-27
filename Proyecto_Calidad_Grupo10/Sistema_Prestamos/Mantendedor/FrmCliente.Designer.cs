@@ -125,7 +125,7 @@
             this.groupBox1.Size = new System.Drawing.Size(694, 337);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Registro Cliente";
+            this.groupBox1.Text = "Cliente";
             // 
             // btnCancelar
             // 
