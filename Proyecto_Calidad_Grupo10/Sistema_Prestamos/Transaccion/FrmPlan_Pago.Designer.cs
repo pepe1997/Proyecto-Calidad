@@ -119,11 +119,11 @@
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(22, 355);
+            this.dgvCliente.Location = new System.Drawing.Point(22, 385);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.RowHeadersWidth = 51;
             this.dgvCliente.RowTemplate.Height = 24;
-            this.dgvCliente.Size = new System.Drawing.Size(1215, 410);
+            this.dgvCliente.Size = new System.Drawing.Size(1215, 380);
             this.dgvCliente.TabIndex = 32;
             // 
             // groupBox1
