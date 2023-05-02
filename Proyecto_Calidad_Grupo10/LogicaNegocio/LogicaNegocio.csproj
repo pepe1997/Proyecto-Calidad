@@ -41,11 +41,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mantenedor\" />
-    <Folder Include="Transaccion\" />
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{b3f5697f-431f-49e1-b166-c4b76373e1c2}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entCliente\entCliente.csproj">
+      <Project>{d1ec8ee5-b8b4-46fb-9a53-fde81ef83fe7}</Project>
+      <Name>entCliente</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entConsolidado\entConsolidado.csproj">
+      <Project>{0e139f31-a7d6-46ed-8cdd-fd8894aad64b}</Project>
+      <Name>entConsolidado</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entCuenta\entCuenta.csproj">
+      <Project>{db14350d-7e6e-4f7f-823e-9b8d9ff3a338}</Project>
+      <Name>entCuenta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entPlan_Pago\entPlan_Pago.csproj">
+      <Project>{3c52d066-1f7c-4ddb-8af9-8744c771f946}</Project>
+      <Name>entPlan_Pago</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entPrestamo\entPrestamo.csproj">
+      <Project>{c66e92da-992a-4afa-8b76-8e6d4c4b80b8}</Project>
+      <Name>entPrestamo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entTipo_Cuenta\entTipo_Cuenta.csproj">
+      <Project>{97d47e55-3f52-44c9-bdd9-1e09d09e62ab}</Project>
+      <Name>entTipo_Cuenta</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

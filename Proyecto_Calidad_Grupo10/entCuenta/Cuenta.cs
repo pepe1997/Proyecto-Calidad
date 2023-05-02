@@ -11,6 +11,6 @@ namespace entCuenta
         public string idCuenta { get; set; }
         public string nroCuenta { get; set; }
         public double salCuenta { get; set; }
-        public DateTime 
+        
     }
 }
