@@ -203,21 +203,21 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(476, 42);
+            this.txtApellido.Location = new System.Drawing.Point(476, 45);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(199, 22);
             this.txtApellido.TabIndex = 8;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(247, 45);
+            this.txtDni.Location = new System.Drawing.Point(242, 45);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(112, 22);
             this.txtDni.TabIndex = 7;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(74, 48);
+            this.txtId.Location = new System.Drawing.Point(82, 45);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(78, 22);
             this.txtId.TabIndex = 6;
@@ -282,7 +282,7 @@
             this.groupBox2.Controls.Add(this.btnEditar);
             this.groupBox2.Controls.Add(this.btnSalir);
             this.groupBox2.Controls.Add(this.btnAnular);
-            this.groupBox2.Location = new System.Drawing.Point(731, 217);
+            this.groupBox2.Location = new System.Drawing.Point(731, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(517, 132);
             this.groupBox2.TabIndex = 13;
@@ -297,7 +297,7 @@
             this.groupBox3.Controls.Add(this.btnBuscar);
             this.groupBox3.Location = new System.Drawing.Point(731, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(517, 184);
+            this.groupBox3.Size = new System.Drawing.Size(517, 112);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Busqueda";
@@ -305,7 +305,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(327, 38);
+            this.btnBuscar.Location = new System.Drawing.Point(250, 38);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(77, 28);
             this.btnBuscar.TabIndex = 11;
@@ -317,13 +317,13 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(21, 41);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(276, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(181, 22);
             this.txtBuscar.TabIndex = 12;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(410, 38);
+            this.btnRefrescar.Location = new System.Drawing.Point(385, 38);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(101, 28);
             this.btnRefrescar.TabIndex = 13;

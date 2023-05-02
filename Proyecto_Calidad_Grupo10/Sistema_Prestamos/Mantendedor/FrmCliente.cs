@@ -185,16 +185,7 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txtBuscar.Text == "")
-            {
-                listarCliente();
-            }
-            else
-            {
-                string dato = txtBuscar.Text.Trim(); // se obtiene el valor de una celda 
-                dgvCliente.DataSource = logCliente.Instancia.BuscarCliente(dato);
-
-            }
+            
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
