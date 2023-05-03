@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaoEntidades\datCliente.cs" />
+    <Compile Include="DaoEntidades\datCuenta.cs" />
+    <Compile Include="DaoEntidades\datTipo_Cuenta.cs" />
     <Compile Include="DataBase\Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
