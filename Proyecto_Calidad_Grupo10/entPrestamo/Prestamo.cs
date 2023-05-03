@@ -10,6 +10,7 @@ namespace entPrestamo
     {
         public string idPrestamo { get; set; }
         public Double montPrestamo { get; set; }
+        public string estPrestamo { get; set; }
         public string idCliente { get; set; }
     }
 }
