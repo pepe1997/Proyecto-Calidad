@@ -84,7 +84,7 @@ namespace AccesoDatos.DaoEntidades
 
 
         //////////////////////////////////EditaCTipo
-        public Boolean EditarCliente(Tipo_Cuenta Tip)
+        public Boolean EditarTipo(Tipo_Cuenta Tip)
         {
             SqlCommand cmd = null;
             Boolean edita = false;

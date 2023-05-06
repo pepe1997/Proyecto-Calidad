@@ -40,7 +40,7 @@ namespace AccesoDatos.DaoEntidades
                 {
                     Plan_Pago Plan = new Plan_Pago();
                     Plan.idPlan = dr["idPlan"].ToString();
-                    Plan.mesPlan = dr["mesPlan"].ToString() ;
+                    Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString()) ;
                     Plan.capitalRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
                     Plan.capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
                     Plan.interes = Convert.ToDouble(dr["interes"].ToString()) ;
@@ -124,8 +124,6 @@ namespace AccesoDatos.DaoEntidades
             return edita;
         }
 
-        //deshabilitaCliente
-
         
 
         public List<Plan_Pago> BuscarPlan(string dato)
@@ -145,7 +143,7 @@ namespace AccesoDatos.DaoEntidades
                 {
                     Plan_Pago Plan = new Plan_Pago();
                     Plan.idPlan = dr["idPlan"].ToString();
-                    Plan.mesPlan = dr["mesPlan"].ToString();
+                    Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString());
                     Plan.capitalRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
                     Plan.capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
                     Plan.interes = Convert.ToDouble(dr["interes"].ToString());

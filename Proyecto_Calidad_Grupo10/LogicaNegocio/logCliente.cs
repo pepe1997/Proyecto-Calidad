@@ -25,39 +25,16 @@ namespace LogicaNegocio
         #region metodos
         public List<Cliente> ListarCliente()
         {
-            try
-            {
-                List<Cliente> listaCliente = datCliente.Instancia.ListarCliente();
-                return listaCliente;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
+            return datCliente.Instancia.ListarCliente();
         }
-        public Boolean InsertarCliente(Cliente Cli)
+        public void InsertarCliente(Cliente Cli)
         {
-            try
-            {
-                return datCliente.Instancia.InsertarCliente(Cli);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            datCliente.Instancia.InsertarCliente(Cli);
         }
 
-        public Boolean EditaCliente(Cliente Clie)
+        public void EditaCliente(Cliente Clie)
         {
-            try
-            {
-                return datCliente.Instancia.EditarCliente(Clie);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            datCliente.Instancia.EditarCliente(Clie);
         }
 
         public List<Cliente> BuscarCliente(string dato)
@@ -65,16 +42,9 @@ namespace LogicaNegocio
             return datCliente.Instancia.BuscarCliente(dato);
 
         }
-        public Boolean DeshabilitarCliente(Cliente c)
+        public void DeshabilitarCliente(Cliente c)
         {
-            try
-            {
-                return datCliente.Instancia.DeshabilitarCliente(c);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            datCliente.Instancia.DeshabilitarCliente(c);
         }
     }
     #endregion metodos
