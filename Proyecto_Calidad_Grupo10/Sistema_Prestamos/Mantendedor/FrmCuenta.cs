@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using entCliente;
 using entCuenta;
 using LogicaNegocio;
+using Sistema_Prestamos.Buscadores;
 
 namespace Sistema_Prestamos.Mantendedor
 {
@@ -121,6 +122,21 @@ namespace Sistema_Prestamos.Mantendedor
                 dgvCuenta.DataSource = logCuenta.Instancia.BuscarCuenta(dato);
 
             }
+        }
+
+        private void btnSeleccionarCliente_Click(object sender, EventArgs e)
+        {
+            FrmBuscarCliente fc = new FrmBuscarCliente();
+            AddOwnedForm(fc);
+            fc.Show();
+
+        }
+
+        private void btnSeleccionarTip_Click(object sender, EventArgs e)
+        {
+            FrmBuscarTipCuenta fc = new FrmBuscarTipCuenta();
+            AddOwnedForm(fc);
+            fc.Show();
         }
     }
 }

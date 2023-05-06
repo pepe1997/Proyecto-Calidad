@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscadores\FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarTipCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarTipCuenta.Designer.cs">
+      <DependentUpon>FrmBuscarTipCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantendedor\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     <Compile Include="Transaccion\FrmPlan_Pago.Designer.cs">
       <DependentUpon>FrmPlan_Pago.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Buscadores\FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FrmBuscarTipCuenta.resx">
+      <DependentUpon>FrmBuscarTipCuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantendedor\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>

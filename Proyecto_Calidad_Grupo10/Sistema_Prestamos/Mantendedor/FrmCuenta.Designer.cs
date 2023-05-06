@@ -178,6 +178,7 @@
             this.btnSeleccionarCliente.TabIndex = 3;
             this.btnSeleccionarCliente.Text = "Seleccionar ";
             this.btnSeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btnSeleccionarCliente.Click += new System.EventHandler(this.btnSeleccionarCliente_Click);
             // 
             // txtApellidoCliente
             // 
@@ -276,6 +277,7 @@
             this.btnSeleccionarTip.TabIndex = 14;
             this.btnSeleccionarTip.Text = "Seleccionar ";
             this.btnSeleccionarTip.UseVisualStyleBackColor = true;
+            this.btnSeleccionarTip.Click += new System.EventHandler(this.btnSeleccionarTip_Click);
             // 
             // txtNombTip
             // 
@@ -510,13 +512,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtCelCliente;
-        private System.Windows.Forms.TextBox txtDireccionCliente;
-        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Button btnSeleccionarCliente;
-        private System.Windows.Forms.TextBox txtApellidoCliente;
-        private System.Windows.Forms.TextBox txtDniCliente;
-        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -546,5 +542,11 @@
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.TextBox txtCelCliente;
+        public System.Windows.Forms.TextBox txtDireccionCliente;
+        public System.Windows.Forms.TextBox txtNombreCliente;
+        public System.Windows.Forms.TextBox txtApellidoCliente;
+        public System.Windows.Forms.TextBox txtDniCliente;
+        public System.Windows.Forms.TextBox txtIdCliente;
     }
 }
