@@ -16,5 +16,10 @@ namespace Sistema_Prestamos.Transaccion
         {
             InitializeComponent();
         }
+
+        private void FrmPlan_Pago_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,8 +41,11 @@ namespace AccesoDatos.DaoEntidades
                     Consolidado Con = new Consolidado();
                     Con.idConsolidado = dr["idConsolidado"].ToString();
                     Con.numMes = Convert.ToInt32(dr["numMes"].ToString());
-                    Con.detConsolidado = dr["detConsolidado"].ToString();
                     Con.interes = Convert.ToInt32(dr["interes"].ToString());
+                    Con.devolucionTotal = Convert.ToDouble(dr["devolucionTotal"].ToString());
+                    Con.interesesTotal = Convert.ToDouble(dr["interesesTotal"].ToString());
+                    Con.montoTotal = Convert.ToDouble(dr["montoTotal"].ToString());
+                    Con.estConsolidado = dr["estConsolidado"].ToString();
                     Con.idCuenta = dr["idCuenta"].ToString();
                     Con.idPrestamo = dr["idPrestamo"].ToString();
                     lista.Add(Con);
@@ -70,8 +73,11 @@ namespace AccesoDatos.DaoEntidades
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idConsolidado", Con.idConsolidado);
                 cmd.Parameters.AddWithValue("@numMes", Con.numMes);
-                cmd.Parameters.AddWithValue("@detConsolidado", Con.detConsolidado);
                 cmd.Parameters.AddWithValue("@interes", Con.interes);
+                cmd.Parameters.AddWithValue("@devolucionTotal", Con.devolucionTotal);
+                cmd.Parameters.AddWithValue("@interesesTotal", Con.interesesTotal);
+                cmd.Parameters.AddWithValue("@montoTotal", Con.montoTotal);
+                cmd.Parameters.AddWithValue("@estConsolidado", Con.estConsolidado);
                 cmd.Parameters.AddWithValue("@idCuenta", Con.idCuenta);
                 cmd.Parameters.AddWithValue("@idPrestamo", Con.idPrestamo);
                 cn.Open();
@@ -99,8 +105,11 @@ namespace AccesoDatos.DaoEntidades
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idConsolidado", Con.idConsolidado);
                 cmd.Parameters.AddWithValue("@numMes", Con.numMes);
-                cmd.Parameters.AddWithValue("@detConsolidado", Con.detConsolidado);
                 cmd.Parameters.AddWithValue("@interes", Con.interes);
+                cmd.Parameters.AddWithValue("@devolucionTotal", Con.devolucionTotal);
+                cmd.Parameters.AddWithValue("@interesesTotal", Con.interesesTotal);
+                cmd.Parameters.AddWithValue("@montoTotal", Con.montoTotal);
+                cmd.Parameters.AddWithValue("@estConsolidado", Con.estConsolidado);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -134,8 +143,11 @@ namespace AccesoDatos.DaoEntidades
                     Consolidado Con = new Consolidado();
                     Con.idConsolidado = dr["idConsolidado"].ToString();
                     Con.numMes = Convert.ToInt32(dr["numMes"].ToString());
-                    Con.detConsolidado = dr["detConsolidado"].ToString();
                     Con.interes = Convert.ToInt32(dr["interes"].ToString());
+                    Con.devolucionTotal = Convert.ToDouble(dr["devolucionTotal"].ToString());
+                    Con.interesesTotal = Convert.ToDouble(dr["interesesTotal"].ToString());
+                    Con.montoTotal = Convert.ToDouble(dr["montoTotal"].ToString());
+                    Con.estConsolidado = dr["estConsolidado"].ToString();
                     Con.idCuenta = dr["idCuenta"].ToString();
                     Con.idPrestamo = dr["idPrestamo"].ToString();
 
