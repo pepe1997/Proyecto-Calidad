@@ -137,9 +137,9 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void btnSeleccionarTip_Click(object sender, EventArgs e)
         {
-            FrmBuscarTipCuenta fc = new FrmBuscarTipCuenta();
-            AddOwnedForm(fc);
-            fc.Show();
+            FrmBuscarTipCuenta fx = new FrmBuscarTipCuenta();
+            AddOwnedForm(fx);
+            fx.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
