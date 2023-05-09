@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace Sistema_Prestamos.Mantendedor
         {
             InitializeComponent();
             listarCuenta();
+            
         }
 
         private void FrmCuenta_Load(object sender, EventArgs e)
@@ -126,10 +128,11 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente fc = new FrmBuscarCliente();
-            AddOwnedForm(fc);
-            fc.Show();
-
+                FrmBuscarCliente fc = new FrmBuscarCliente();
+                fc.txtFormulario.Text = "Cuenta";
+                AddOwnedForm(fc);
+                fc.Show();
+                
         }
 
         private void btnSeleccionarTip_Click(object sender, EventArgs e)
@@ -137,6 +140,16 @@ namespace Sistema_Prestamos.Mantendedor
             FrmBuscarTipCuenta fc = new FrmBuscarTipCuenta();
             AddOwnedForm(fc);
             fc.Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            listarCuenta();
         }
     }
 }

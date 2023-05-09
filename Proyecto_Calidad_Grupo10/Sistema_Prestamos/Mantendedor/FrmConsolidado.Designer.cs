@@ -28,76 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvConsolidado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbEstadoConsolidado = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMontoTotal = new System.Windows.Forms.TextBox();
+            this.txtInteresTotal = new System.Windows.Forms.TextBox();
+            this.txtDevolucionTotal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMeses = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtInteresConsolidado = new System.Windows.Forms.TextBox();
+            this.txtIdConsolidado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtIdHospedaje = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnActualizarSaldo = new System.Windows.Forms.Button();
+            this.txtNroCuenta = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtIdReserva = new System.Windows.Forms.TextBox();
+            this.txtIdCuenta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnSeleccionarEfectivo = new System.Windows.Forms.Button();
+            this.btnSeleccionarPrestamo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnCambiarEstadoPrestamo = new System.Windows.Forms.Button();
+            this.cmbEstadoPrestamo = new System.Windows.Forms.ComboBox();
+            this.txtMontoPrestamo = new System.Windows.Forms.TextBox();
+            this.txtIdPrestamo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsolidado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvCliente
+            // dgvConsolidado
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(22, 362);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.RowHeadersWidth = 51;
-            this.dgvCliente.RowTemplate.Height = 24;
-            this.dgvCliente.Size = new System.Drawing.Size(694, 341);
-            this.dgvCliente.TabIndex = 18;
+            this.dgvConsolidado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsolidado.Location = new System.Drawing.Point(22, 362);
+            this.dgvConsolidado.Name = "dgvConsolidado";
+            this.dgvConsolidado.RowHeadersWidth = 51;
+            this.dgvConsolidado.RowTemplate.Height = 24;
+            this.dgvConsolidado.Size = new System.Drawing.Size(694, 341);
+            this.dgvConsolidado.TabIndex = 18;
+            this.dgvConsolidado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsolidado_CellDoubleClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cmbEstadoConsolidado);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtMontoTotal);
+            this.groupBox1.Controls.Add(this.txtInteresTotal);
+            this.groupBox1.Controls.Add(this.txtDevolucionTotal);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtMeses);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.txtInteresConsolidado);
+            this.groupBox1.Controls.Add(this.txtIdConsolidado);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -108,12 +116,78 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consolidado";
             // 
-            // textBox4
+            // cmbEstadoConsolidado
             // 
-            this.textBox4.Location = new System.Drawing.Point(280, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 22);
-            this.textBox4.TabIndex = 18;
+            this.cmbEstadoConsolidado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEstadoConsolidado.FormattingEnabled = true;
+            this.cmbEstadoConsolidado.Location = new System.Drawing.Point(321, 118);
+            this.cmbEstadoConsolidado.Name = "cmbEstadoConsolidado";
+            this.cmbEstadoConsolidado.Size = new System.Drawing.Size(160, 24);
+            this.cmbEstadoConsolidado.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(254, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 16);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Estado";
+            // 
+            // txtMontoTotal
+            // 
+            this.txtMontoTotal.Location = new System.Drawing.Point(122, 118);
+            this.txtMontoTotal.Name = "txtMontoTotal";
+            this.txtMontoTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtMontoTotal.TabIndex = 24;
+            // 
+            // txtInteresTotal
+            // 
+            this.txtInteresTotal.Location = new System.Drawing.Point(1004, 42);
+            this.txtInteresTotal.Name = "txtInteresTotal";
+            this.txtInteresTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtInteresTotal.TabIndex = 23;
+            // 
+            // txtDevolucionTotal
+            // 
+            this.txtDevolucionTotal.Location = new System.Drawing.Point(744, 42);
+            this.txtDevolucionTotal.Name = "txtDevolucionTotal";
+            this.txtDevolucionTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtDevolucionTotal.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Monto Total";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(890, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Interese Total";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(623, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Devolucion Total";
+            // 
+            // txtMeses
+            // 
+            this.txtMeses.Location = new System.Drawing.Point(280, 42);
+            this.txtMeses.Name = "txtMeses";
+            this.txtMeses.Size = new System.Drawing.Size(134, 22);
+            this.txtMeses.TabIndex = 18;
             // 
             // btnCancelar
             // 
@@ -132,6 +206,7 @@
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -141,20 +216,21 @@
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // txtDireccion
+            // txtInteresConsolidado
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(529, 42);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(69, 22);
-            this.txtDireccion.TabIndex = 9;
+            this.txtInteresConsolidado.Location = new System.Drawing.Point(529, 42);
+            this.txtInteresConsolidado.Name = "txtInteresConsolidado";
+            this.txtInteresConsolidado.Size = new System.Drawing.Size(69, 22);
+            this.txtInteresConsolidado.TabIndex = 9;
             // 
-            // txtId
+            // txtIdConsolidado
             // 
-            this.txtId.Location = new System.Drawing.Point(75, 42);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(89, 22);
-            this.txtId.TabIndex = 6;
+            this.txtIdConsolidado.Location = new System.Drawing.Point(75, 42);
+            this.txtIdConsolidado.Name = "txtIdConsolidado";
+            this.txtIdConsolidado.Size = new System.Drawing.Size(89, 22);
+            this.txtIdConsolidado.TabIndex = 6;
             // 
             // label6
             // 
@@ -186,10 +262,13 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.txtIdHospedaje);
+            this.groupBox4.Controls.Add(this.txtSaldo);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.btnActualizarSaldo);
+            this.groupBox4.Controls.Add(this.txtNroCuenta);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.txtIdReserva);
+            this.groupBox4.Controls.Add(this.txtIdCuenta);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Location = new System.Drawing.Point(740, 12);
             this.groupBox4.Name = "groupBox4";
@@ -198,22 +277,49 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cuenta";
             // 
-            // button1
+            // txtSaldo
             // 
-            this.button1.Location = new System.Drawing.Point(343, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 46);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Seleccionar ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtSaldo.Location = new System.Drawing.Point(84, 111);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(90, 22);
+            this.txtSaldo.TabIndex = 17;
             // 
-            // txtIdHospedaje
+            // label13
             // 
-            this.txtIdHospedaje.Enabled = false;
-            this.txtIdHospedaje.Location = new System.Drawing.Point(267, 48);
-            this.txtIdHospedaje.Name = "txtIdHospedaje";
-            this.txtIdHospedaje.Size = new System.Drawing.Size(186, 22);
-            this.txtIdHospedaje.TabIndex = 13;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(23, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 16);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Saldo";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(222, 102);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 46);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Seleccionar ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnActualizarSaldo
+            // 
+            this.btnActualizarSaldo.Location = new System.Drawing.Point(343, 102);
+            this.btnActualizarSaldo.Name = "btnActualizarSaldo";
+            this.btnActualizarSaldo.Size = new System.Drawing.Size(110, 46);
+            this.btnActualizarSaldo.TabIndex = 14;
+            this.btnActualizarSaldo.Text = "Actualizar";
+            this.btnActualizarSaldo.UseVisualStyleBackColor = true;
+            this.btnActualizarSaldo.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtNroCuenta
+            // 
+            this.txtNroCuenta.Enabled = false;
+            this.txtNroCuenta.Location = new System.Drawing.Point(267, 48);
+            this.txtNroCuenta.Name = "txtNroCuenta";
+            this.txtNroCuenta.Size = new System.Drawing.Size(186, 22);
+            this.txtNroCuenta.TabIndex = 13;
             // 
             // label12
             // 
@@ -224,13 +330,13 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Nro Cuenta";
             // 
-            // txtIdReserva
+            // txtIdCuenta
             // 
-            this.txtIdReserva.Enabled = false;
-            this.txtIdReserva.Location = new System.Drawing.Point(64, 48);
-            this.txtIdReserva.Name = "txtIdReserva";
-            this.txtIdReserva.Size = new System.Drawing.Size(90, 22);
-            this.txtIdReserva.TabIndex = 1;
+            this.txtIdCuenta.Enabled = false;
+            this.txtIdCuenta.Location = new System.Drawing.Point(64, 48);
+            this.txtIdCuenta.Name = "txtIdCuenta";
+            this.txtIdCuenta.Size = new System.Drawing.Size(90, 22);
+            this.txtIdCuenta.TabIndex = 1;
             // 
             // label8
             // 
@@ -241,22 +347,23 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "id";
             // 
-            // btnSeleccionarEfectivo
+            // btnSeleccionarPrestamo
             // 
-            this.btnSeleccionarEfectivo.Location = new System.Drawing.Point(357, 102);
-            this.btnSeleccionarEfectivo.Name = "btnSeleccionarEfectivo";
-            this.btnSeleccionarEfectivo.Size = new System.Drawing.Size(110, 46);
-            this.btnSeleccionarEfectivo.TabIndex = 3;
-            this.btnSeleccionarEfectivo.Text = "Seleccionar ";
-            this.btnSeleccionarEfectivo.UseVisualStyleBackColor = true;
+            this.btnSeleccionarPrestamo.Location = new System.Drawing.Point(357, 102);
+            this.btnSeleccionarPrestamo.Name = "btnSeleccionarPrestamo";
+            this.btnSeleccionarPrestamo.Size = new System.Drawing.Size(110, 46);
+            this.btnSeleccionarPrestamo.TabIndex = 3;
+            this.btnSeleccionarPrestamo.Text = "Seleccionar ";
+            this.btnSeleccionarPrestamo.UseVisualStyleBackColor = true;
+            this.btnSeleccionarPrestamo.Click += new System.EventHandler(this.btnSeleccionarPrestamo_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.btnSeleccionarEfectivo);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.btnCambiarEstadoPrestamo);
+            this.groupBox2.Controls.Add(this.cmbEstadoPrestamo);
+            this.groupBox2.Controls.Add(this.btnSeleccionarPrestamo);
+            this.groupBox2.Controls.Add(this.txtMontoPrestamo);
+            this.groupBox2.Controls.Add(this.txtIdPrestamo);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label11);
@@ -267,19 +374,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Prestamo";
             // 
-            // txtNombre
+            // btnCambiarEstadoPrestamo
             // 
-            this.txtNombre.Location = new System.Drawing.Point(242, 48);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(112, 22);
-            this.txtNombre.TabIndex = 7;
+            this.btnCambiarEstadoPrestamo.Location = new System.Drawing.Point(488, 102);
+            this.btnCambiarEstadoPrestamo.Name = "btnCambiarEstadoPrestamo";
+            this.btnCambiarEstadoPrestamo.Size = new System.Drawing.Size(110, 46);
+            this.btnCambiarEstadoPrestamo.TabIndex = 9;
+            this.btnCambiarEstadoPrestamo.Text = "Cambiar Estado";
+            this.btnCambiarEstadoPrestamo.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // cmbEstadoPrestamo
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(78, 22);
-            this.textBox3.TabIndex = 6;
+            this.cmbEstadoPrestamo.FormattingEnabled = true;
+            this.cmbEstadoPrestamo.Location = new System.Drawing.Point(477, 45);
+            this.cmbEstadoPrestamo.Name = "cmbEstadoPrestamo";
+            this.cmbEstadoPrestamo.Size = new System.Drawing.Size(162, 24);
+            this.cmbEstadoPrestamo.TabIndex = 8;
+            // 
+            // txtMontoPrestamo
+            // 
+            this.txtMontoPrestamo.Location = new System.Drawing.Point(242, 48);
+            this.txtMontoPrestamo.Name = "txtMontoPrestamo";
+            this.txtMontoPrestamo.Size = new System.Drawing.Size(112, 22);
+            this.txtMontoPrestamo.TabIndex = 7;
+            // 
+            // txtIdPrestamo
+            // 
+            this.txtIdPrestamo.Location = new System.Drawing.Point(75, 48);
+            this.txtIdPrestamo.Name = "txtIdPrestamo";
+            this.txtIdPrestamo.Size = new System.Drawing.Size(78, 22);
+            this.txtIdPrestamo.TabIndex = 6;
             // 
             // label4
             // 
@@ -323,6 +447,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Operaciones";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(181, 124);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 49);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Salir";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(17, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 49);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Pagar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(17, 32);
@@ -359,89 +502,6 @@
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(477, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 24);
-            this.comboBox1.TabIndex = 8;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(488, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 46);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cambiar Estado";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(623, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 16);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Devolucion Total";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(890, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Interese Total";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 16);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Monto Total";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(744, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 22;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(1004, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(122, 118);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 24;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(17, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 49);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Pagar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(181, 124);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 49);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Salir";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // FrmConsolidado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,11 +510,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.dgvCliente);
+            this.Controls.Add(this.dgvConsolidado);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsolidado";
             this.Text = "FrmConsolidado";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            this.Load += new System.EventHandler(this.FrmConsolidado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsolidado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -468,26 +529,22 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvConsolidado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.TextBox txtIdHospedaje;
+        public System.Windows.Forms.TextBox txtNroCuenta;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox txtIdReserva;
+        public System.Windows.Forms.TextBox txtIdCuenta;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSeleccionarEfectivo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSeleccionarPrestamo;
+        private System.Windows.Forms.Button btnActualizarSaldo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
@@ -496,16 +553,25 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCambiarEstadoPrestamo;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox txtMontoPrestamo;
+        public System.Windows.Forms.TextBox txtIdPrestamo;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.ComboBox cmbEstadoPrestamo;
+        public System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox txtInteresConsolidado;
+        public System.Windows.Forms.TextBox txtIdConsolidado;
+        public System.Windows.Forms.TextBox txtMeses;
+        public System.Windows.Forms.TextBox txtMontoTotal;
+        public System.Windows.Forms.TextBox txtInteresTotal;
+        public System.Windows.Forms.TextBox txtDevolucionTotal;
+        public System.Windows.Forms.ComboBox cmbEstadoConsolidado;
     }
 }

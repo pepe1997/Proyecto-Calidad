@@ -54,11 +54,11 @@
             // dgvTipCuenta
             // 
             this.dgvTipCuenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipCuenta.Location = new System.Drawing.Point(22, 83);
+            this.dgvTipCuenta.Location = new System.Drawing.Point(12, 90);
             this.dgvTipCuenta.Name = "dgvTipCuenta";
             this.dgvTipCuenta.RowHeadersWidth = 51;
             this.dgvTipCuenta.RowTemplate.Height = 24;
-            this.dgvTipCuenta.Size = new System.Drawing.Size(756, 401);
+            this.dgvTipCuenta.Size = new System.Drawing.Size(432, 401);
             this.dgvTipCuenta.TabIndex = 6;
             this.dgvTipCuenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipCuenta_CellDoubleClick);
             // 
@@ -66,12 +66,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 512);
+            this.ClientSize = new System.Drawing.Size(456, 512);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.id);
             this.Controls.Add(this.dgvTipCuenta);
             this.Name = "FrmBuscarTipCuenta";
-            this.Text = "FrmuscarTipCuenta";
+            this.Text = "FrmBuscarTipCuenta";
             this.Load += new System.EventHandler(this.FrmBuscarTipCuenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipCuenta)).EndInit();
             this.ResumeLayout(false);

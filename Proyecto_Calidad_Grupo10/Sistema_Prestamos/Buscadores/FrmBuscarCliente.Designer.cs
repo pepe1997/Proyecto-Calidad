@@ -31,6 +31,7 @@
             this.txtDni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.txtFormulario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,19 @@
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick);
             // 
+            // txtFormulario
+            // 
+            this.txtFormulario.Location = new System.Drawing.Point(352, 26);
+            this.txtFormulario.Name = "txtFormulario";
+            this.txtFormulario.Size = new System.Drawing.Size(153, 22);
+            this.txtFormulario.TabIndex = 6;
+            // 
             // FrmBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.txtFormulario);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCliente);
@@ -85,5 +94,6 @@
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dgvCliente;
+        public System.Windows.Forms.TextBox txtFormulario;
     }
 }

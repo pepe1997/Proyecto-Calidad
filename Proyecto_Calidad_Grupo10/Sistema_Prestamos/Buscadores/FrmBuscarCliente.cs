@@ -32,14 +32,29 @@ namespace Sistema_Prestamos.Buscadores
 
         private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmCuenta fr = Owner as FrmCuenta;
-            fr.txtIdCliente.Text = dgvCliente.CurrentRow.Cells[0].Value.ToString();
-            fr.txtDniCliente.Text = dgvCliente.CurrentRow.Cells[1].Value.ToString();
-            fr.txtApellidoCliente.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
-            fr.txtNombreCliente.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
-            fr.txtDireccionCliente.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
-            fr.txtCelCliente.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
-            Close();
+            if(txtFormulario.Text == "Cuenta")
+            {
+                FrmCuenta fr = Owner as FrmCuenta;
+                fr.txtIdCliente.Text = dgvCliente.CurrentRow.Cells[0].Value.ToString();
+                fr.txtDniCliente.Text = dgvCliente.CurrentRow.Cells[1].Value.ToString();
+                fr.txtApellidoCliente.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
+                fr.txtNombreCliente.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
+                fr.txtDireccionCliente.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
+                fr.txtCelCliente.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+                Close();
+            }
+            else if( txtFormulario.Text == "Prestamo")
+            {
+                FrmPrestamo fp = Owner as FrmPrestamo;
+                fp.txtIdCliente.Text = dgvCliente.CurrentRow.Cells[0].Value.ToString();
+                fp.txtDniCliente.Text = dgvCliente.CurrentRow.Cells[1].Value.ToString();
+                fp.txtApellidoCliente.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
+                fp.txtNombreCliente.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
+                fp.txtDireccionCliente.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
+                fp.txtCelCliente.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+                Close();
+            }
+            
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)

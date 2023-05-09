@@ -177,6 +177,40 @@ namespace AccesoDatos.DaoEntidades
             }
             return lista;
         }
+        public List<Prestamo> BuscarPrestamoPendiente(string dato)
+        {
+            SqlCommand cmd = null;
+            List<Prestamo> lista = new List<Prestamo>();
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spBuscarPrestamoPendientes", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idPrestamo", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Prestamo Pres = new Prestamo();
+                    Pres.idPrestamo = dr["idPrestamo"].ToString();
+                    Pres.montPrestamo = Convert.ToDouble(dr["montPrestamo"].ToString());
+                    Pres.estPrestamo = dr["estPrestamo"].ToString();
+                    Pres.idCliente = dr["idCliente"].ToString();
+                    lista.Add(Pres);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
 
         public Boolean CambiarEsatdoAprobado(Prestamo Pres)
         {

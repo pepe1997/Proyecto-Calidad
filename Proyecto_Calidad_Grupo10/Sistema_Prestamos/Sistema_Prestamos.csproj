@@ -52,6 +52,24 @@
     <Compile Include="Buscadores\FrmBuscarCliente.Designer.cs">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Buscadores\FrmBuscarConsolidado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarConsolidado.Designer.cs">
+      <DependentUpon>FrmBuscarConsolidado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarCuenta.Designer.cs">
+      <DependentUpon>FrmBuscarCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscarPrestamo.Designer.cs">
+      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Buscadores\FrmBuscarTipCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,15 @@
     </Compile>
     <EmbeddedResource Include="Buscadores\FrmBuscarCliente.resx">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FrmBuscarConsolidado.resx">
+      <DependentUpon>FrmBuscarConsolidado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FrmBuscarCuenta.resx">
+      <DependentUpon>FrmBuscarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscadores\FrmBuscarPrestamo.resx">
+      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buscadores\FrmBuscarTipCuenta.resx">
       <DependentUpon>FrmBuscarTipCuenta.cs</DependentUpon>

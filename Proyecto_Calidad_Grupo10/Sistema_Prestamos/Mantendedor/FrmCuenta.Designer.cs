@@ -353,7 +353,6 @@
             // 
             // txtNroCuenta
             // 
-            this.txtNroCuenta.Enabled = false;
             this.txtNroCuenta.Location = new System.Drawing.Point(280, 36);
             this.txtNroCuenta.Name = "txtNroCuenta";
             this.txtNroCuenta.Size = new System.Drawing.Size(186, 22);
@@ -367,6 +366,7 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -458,6 +458,7 @@
             this.btnRefrescar.TabIndex = 13;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // txtBuscar
             // 

@@ -49,6 +49,11 @@ namespace LogicaNegocio
             return datPrestamo.Instancia.BuscarPrestamo(dato);
 
         }
+        public List<Prestamo> BuscarPrestamoPendiente(string dato)
+        {
+            return datPrestamo.Instancia.BuscarPrestamoPendiente(dato);
+
+        }
         public void CambiarAprobado(Prestamo Pres)
         {
             datPrestamo.Instancia.CambiarEsatdoAprobado(Pres);
