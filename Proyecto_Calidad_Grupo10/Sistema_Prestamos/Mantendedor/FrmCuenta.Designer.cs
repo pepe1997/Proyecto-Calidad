@@ -33,7 +33,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
             this.txtCelCliente = new System.Windows.Forms.TextBox();
             this.txtDireccionCliente = new System.Windows.Forms.TextBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
@@ -47,14 +47,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbTipoCuenta = new System.Windows.Forms.GroupBox();
             this.btnSeleccionarTip = new System.Windows.Forms.Button();
             this.txtNombTip = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtIdTipCuenta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvCuenta = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbCuenta = new System.Windows.Forms.GroupBox();
             this.dtpFechaCuenta = new System.Windows.Forms.DateTimePicker();
             this.txtNroCuenta = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -70,16 +70,18 @@
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbCliente.SuspendLayout();
+            this.gbTipoCuenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuenta)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbCuenta.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btnNuevo);
             this.groupBox3.Controls.Add(this.btnEditar);
             this.groupBox3.Controls.Add(this.btnSalir);
@@ -99,15 +101,17 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(179, 48);
+            this.btnEditar.Location = new System.Drawing.Point(133, 48);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(99, 49);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalir
             // 
@@ -120,37 +124,39 @@
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(367, 48);
+            this.btnAnular.Location = new System.Drawing.Point(255, 48);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(99, 49);
             this.btnAnular.TabIndex = 10;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
-            // groupBox2
+            // gbCliente
             // 
-            this.groupBox2.Controls.Add(this.txtCelCliente);
-            this.groupBox2.Controls.Add(this.txtDireccionCliente);
-            this.groupBox2.Controls.Add(this.txtNombreCliente);
-            this.groupBox2.Controls.Add(this.btnSeleccionarCliente);
-            this.groupBox2.Controls.Add(this.txtApellidoCliente);
-            this.groupBox2.Controls.Add(this.txtDniCliente);
-            this.groupBox2.Controls.Add(this.txtIdCliente);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Location = new System.Drawing.Point(5, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(694, 212);
-            this.groupBox2.TabIndex = 34;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cliente";
+            this.gbCliente.Controls.Add(this.txtCelCliente);
+            this.gbCliente.Controls.Add(this.txtDireccionCliente);
+            this.gbCliente.Controls.Add(this.txtNombreCliente);
+            this.gbCliente.Controls.Add(this.btnSeleccionarCliente);
+            this.gbCliente.Controls.Add(this.txtApellidoCliente);
+            this.gbCliente.Controls.Add(this.txtDniCliente);
+            this.gbCliente.Controls.Add(this.txtIdCliente);
+            this.gbCliente.Controls.Add(this.label4);
+            this.gbCliente.Controls.Add(this.label5);
+            this.gbCliente.Controls.Add(this.label7);
+            this.gbCliente.Controls.Add(this.label9);
+            this.gbCliente.Controls.Add(this.label10);
+            this.gbCliente.Controls.Add(this.label11);
+            this.gbCliente.Location = new System.Drawing.Point(5, 12);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(694, 212);
+            this.gbCliente.TabIndex = 34;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Cliente";
             // 
             // txtCelCliente
             // 
+            this.txtCelCliente.Enabled = false;
             this.txtCelCliente.Location = new System.Drawing.Point(90, 143);
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(170, 22);
@@ -158,13 +164,15 @@
             // 
             // txtDireccionCliente
             // 
+            this.txtDireccionCliente.Enabled = false;
             this.txtDireccionCliente.Location = new System.Drawing.Point(380, 93);
             this.txtDireccionCliente.Name = "txtDireccionCliente";
-            this.txtDireccionCliente.Size = new System.Drawing.Size(271, 22);
+            this.txtDireccionCliente.Size = new System.Drawing.Size(268, 22);
             this.txtDireccionCliente.TabIndex = 10;
             // 
             // txtNombreCliente
             // 
+            this.txtNombreCliente.Enabled = false;
             this.txtNombreCliente.Location = new System.Drawing.Point(90, 93);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(170, 22);
@@ -172,7 +180,7 @@
             // 
             // btnSeleccionarCliente
             // 
-            this.btnSeleccionarCliente.Location = new System.Drawing.Point(552, 149);
+            this.btnSeleccionarCliente.Location = new System.Drawing.Point(538, 149);
             this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
             this.btnSeleccionarCliente.Size = new System.Drawing.Size(110, 46);
             this.btnSeleccionarCliente.TabIndex = 3;
@@ -182,6 +190,7 @@
             // 
             // txtApellidoCliente
             // 
+            this.txtApellidoCliente.Enabled = false;
             this.txtApellidoCliente.Location = new System.Drawing.Point(449, 42);
             this.txtApellidoCliente.Name = "txtApellidoCliente";
             this.txtApellidoCliente.Size = new System.Drawing.Size(199, 22);
@@ -189,6 +198,7 @@
             // 
             // txtDniCliente
             // 
+            this.txtDniCliente.Enabled = false;
             this.txtDniCliente.Location = new System.Drawing.Point(220, 45);
             this.txtDniCliente.Name = "txtDniCliente";
             this.txtDniCliente.Size = new System.Drawing.Size(112, 22);
@@ -196,6 +206,7 @@
             // 
             // txtIdCliente
             // 
+            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Location = new System.Drawing.Point(47, 48);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(78, 22);
@@ -255,19 +266,19 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Id";
             // 
-            // groupBox4
+            // gbTipoCuenta
             // 
-            this.groupBox4.Controls.Add(this.btnSeleccionarTip);
-            this.groupBox4.Controls.Add(this.txtNombTip);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.txtIdTipCuenta);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(5, 230);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(694, 148);
-            this.groupBox4.TabIndex = 33;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tipo Cuenta";
+            this.gbTipoCuenta.Controls.Add(this.btnSeleccionarTip);
+            this.gbTipoCuenta.Controls.Add(this.txtNombTip);
+            this.gbTipoCuenta.Controls.Add(this.label12);
+            this.gbTipoCuenta.Controls.Add(this.txtIdTipCuenta);
+            this.gbTipoCuenta.Controls.Add(this.label8);
+            this.gbTipoCuenta.Location = new System.Drawing.Point(5, 230);
+            this.gbTipoCuenta.Name = "gbTipoCuenta";
+            this.gbTipoCuenta.Size = new System.Drawing.Size(694, 148);
+            this.gbTipoCuenta.TabIndex = 33;
+            this.gbTipoCuenta.TabStop = false;
+            this.gbTipoCuenta.Text = "Tipo Cuenta";
             // 
             // btnSeleccionarTip
             // 
@@ -324,25 +335,25 @@
             this.dgvCuenta.TabIndex = 32;
             this.dgvCuenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuenta_CellDoubleClick);
             // 
-            // groupBox1
+            // gbCuenta
             // 
-            this.groupBox1.Controls.Add(this.dtpFechaCuenta);
-            this.groupBox1.Controls.Add(this.txtNroCuenta);
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.txtSaldoCuenta);
-            this.groupBox1.Controls.Add(this.txtIdCuenta);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(705, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(497, 212);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cuenta";
+            this.gbCuenta.Controls.Add(this.dtpFechaCuenta);
+            this.gbCuenta.Controls.Add(this.txtNroCuenta);
+            this.gbCuenta.Controls.Add(this.btnCancelar);
+            this.gbCuenta.Controls.Add(this.btnModificar);
+            this.gbCuenta.Controls.Add(this.btnAgregar);
+            this.gbCuenta.Controls.Add(this.txtSaldoCuenta);
+            this.gbCuenta.Controls.Add(this.txtIdCuenta);
+            this.gbCuenta.Controls.Add(this.label6);
+            this.gbCuenta.Controls.Add(this.label3);
+            this.gbCuenta.Controls.Add(this.label2);
+            this.gbCuenta.Controls.Add(this.label1);
+            this.gbCuenta.Location = new System.Drawing.Point(705, 12);
+            this.gbCuenta.Name = "gbCuenta";
+            this.gbCuenta.Size = new System.Drawing.Size(497, 212);
+            this.gbCuenta.TabIndex = 31;
+            this.gbCuenta.TabStop = false;
+            this.gbCuenta.Text = "Cuenta";
             // 
             // dtpFechaCuenta
             // 
@@ -477,6 +488,16 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(378, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 49);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -484,21 +505,21 @@
             this.ClientSize = new System.Drawing.Size(1225, 714);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gbCliente);
+            this.Controls.Add(this.gbTipoCuenta);
             this.Controls.Add(this.dgvCuenta);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbCuenta);
             this.Name = "FrmCuenta";
             this.Text = "FrmCuenta";
             this.Load += new System.EventHandler(this.FrmCuenta_Load);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
+            this.gbTipoCuenta.ResumeLayout(false);
+            this.gbTipoCuenta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuenta)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbCuenta.ResumeLayout(false);
+            this.gbCuenta.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -512,7 +533,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbCliente;
         private System.Windows.Forms.Button btnSeleccionarCliente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -520,14 +541,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbTipoCuenta;
         private System.Windows.Forms.Button btnSeleccionarTip;
         public System.Windows.Forms.TextBox txtNombTip;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.TextBox txtIdTipCuenta;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvCuenta;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbCuenta;
         private System.Windows.Forms.DateTimePicker dtpFechaCuenta;
         public System.Windows.Forms.TextBox txtNroCuenta;
         private System.Windows.Forms.Button btnCancelar;
@@ -549,5 +570,6 @@
         public System.Windows.Forms.TextBox txtApellidoCliente;
         public System.Windows.Forms.TextBox txtDniCliente;
         public System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.Button button1;
     }
 }

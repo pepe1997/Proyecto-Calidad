@@ -18,6 +18,7 @@ namespace Sistema_Prestamos.Mantendedor
         {
             InitializeComponent();
             listarCliente();
+            groupBox1.Enabled = false;
 
         }
 
@@ -52,6 +53,7 @@ namespace Sistema_Prestamos.Mantendedor
             btnAgregar.Visible = true;
             LimpiarVariables();
             btnModificar.Visible = false;
+            txtId.Enabled = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

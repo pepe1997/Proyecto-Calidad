@@ -17,7 +17,7 @@ namespace Sistema_Prestamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTipoCuenta());
+            Application.Run(new FrmCuenta());
         }
     }
 }

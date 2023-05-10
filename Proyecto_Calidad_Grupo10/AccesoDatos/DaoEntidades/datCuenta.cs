@@ -103,8 +103,6 @@ namespace AccesoDatos.DaoEntidades
                 cmd.Parameters.AddWithValue("@nroCuenta", Cue.nroCuenta);
                 cmd.Parameters.AddWithValue("@salCuenta", Cue.salCuenta);
                 cmd.Parameters.AddWithValue("@fechCreacion", Cue.fechCreacion);
-                cmd.Parameters.AddWithValue("@idCliente", Cue.idCliente);
-                cmd.Parameters.AddWithValue("@idTipo", Cue.idTipo);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

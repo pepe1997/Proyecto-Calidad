@@ -21,7 +21,22 @@ namespace Sistema_Prestamos.Mantendedor
         {
             InitializeComponent();
             listarCuenta();
-            
+            gbCliente.Enabled = false;
+            gbTipoCuenta.Enabled = false;
+            gbCuenta.Enabled = false;
+
+        }
+        public void gbActivos()
+        {
+            gbCliente.Enabled = true;
+            gbCuenta.Enabled = true;
+            gbTipoCuenta.Enabled=true;
+        }
+        public void gbInactivos()
+        {
+            gbCliente.Enabled = false;
+            gbCuenta.Enabled = false;
+            gbTipoCuenta.Enabled = false;
         }
 
         private void FrmCuenta_Load(object sender, EventArgs e)
@@ -76,6 +91,7 @@ namespace Sistema_Prestamos.Mantendedor
             LimpiarVariables();
             LimpiarVariablesTip();
             LimpiarVariabllesCliente();
+
             listarCuenta();
         }
 
@@ -144,12 +160,48 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            LimpiarVariables();
+            listarCuenta();
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             listarCuenta();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            LimpiarVariables();
+            LimpiarVariabllesCliente();
+            LimpiarVariablesTip();
+            gbCliente.Enabled = false;
+            gbTipoCuenta.Enabled = false;
+            gbCuenta.Enabled = false;
+            btnModificar.Visible = true;
+            listarCuenta();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            gbCliente.Enabled = true;
+            gbTipoCuenta.Enabled = true;
+            gbCuenta.Enabled = true;
+            btnModificar.Visible =false ;
+            btnAgregar.Visible = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            gbCliente.Enabled = false;
+            gbTipoCuenta.Enabled = false;
+            gbCuenta.Enabled = true;
+            btnModificar.Visible = true;
+            btnAgregar.Visible = false;
         }
     }
 }

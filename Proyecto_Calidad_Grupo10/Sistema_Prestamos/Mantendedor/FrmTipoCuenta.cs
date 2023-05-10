@@ -44,6 +44,7 @@ namespace Sistema_Prestamos.Mantendedor
             {
                 MessageBox.Show("Erro.." + ex);
             }
+            listarTipoCuenta();
             
         }
 
