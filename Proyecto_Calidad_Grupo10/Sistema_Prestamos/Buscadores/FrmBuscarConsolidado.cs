@@ -19,6 +19,7 @@ namespace Sistema_Prestamos.Buscadores
         public FrmBuscarConsolidado()
         {
             InitializeComponent();
+            listarConsolidado();
         }
 
         private void FrmBuscarConsolidado_Load(object sender, EventArgs e)
@@ -49,7 +50,6 @@ namespace Sistema_Prestamos.Buscadores
             FrmPlan_Pago fr = Owner as FrmPlan_Pago;
             fr.txtIdConsolidado.Text = dgvConsolidado.CurrentRow.Cells[0].Value.ToString();
             fr.txtMesConsolidado.Text = dgvConsolidado.CurrentRow.Cells[1].Value.ToString();
-            fr.txtInteresConsolidado.Text = dgvConsolidado.CurrentRow.Cells[2].Value.ToString();
             fr.txtIdCuenta.Text = dgvConsolidado.CurrentRow.Cells[8].Value.ToString();
             Close();
         }

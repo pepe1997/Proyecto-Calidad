@@ -39,7 +39,7 @@ namespace AccesoDatos.DaoEntidades
                 while (dr.Read())
                 {
                     Plan_Pago Plan = new Plan_Pago();
-                    Plan.idPlan = dr["idPlan"].ToString();
+                    Plan.idPlan = Convert.ToInt32(dr["idPlan"].ToString());
                     Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString()) ;
                     Plan.capitalRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
                     Plan.capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
@@ -70,7 +70,6 @@ namespace AccesoDatos.DaoEntidades
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spInsertarPlan", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idPlan", Plan.idPlan);
                 cmd.Parameters.AddWithValue("@mesPlan", Plan.mesPlan);
                 cmd.Parameters.AddWithValue("@capitalRemanente", Plan.capitalRemanente);
                 cmd.Parameters.AddWithValue("@capitalDevolver", Plan.capitalDevolver);
@@ -142,7 +141,7 @@ namespace AccesoDatos.DaoEntidades
                 while (dr.Read())
                 {
                     Plan_Pago Plan = new Plan_Pago();
-                    Plan.idPlan = dr["idPlan"].ToString();
+                    Plan.idPlan = Convert.ToInt32(dr["idPlan"].ToString());
                     Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString());
                     Plan.capitalRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
                     Plan.capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());

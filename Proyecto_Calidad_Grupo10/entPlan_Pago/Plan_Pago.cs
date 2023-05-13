@@ -8,7 +8,7 @@ namespace entPlan_Pago
 {
     public class Plan_Pago
     {
-        public string idPlan { get; set; }
+        public int idPlan { get; set; }
         public int mesPlan { get; set; }
         public Double capitalRemanente { get; set; }    
         public Double capitalDevolver { get; set; }

@@ -13,6 +13,7 @@ using LogicaNegocio;
 using entCuenta;
 using Sistema_Prestamos.Buscadores;
 
+
 namespace Sistema_Prestamos.Mantendedor
 {
     public partial class FrmPrestamo : Form
@@ -21,12 +22,16 @@ namespace Sistema_Prestamos.Mantendedor
         {
             InitializeComponent();
             listarPrestamo();
+            gbCliente.Enabled = false;
+            gbPrestamo.Enabled = false;
+            
         }
 
         private void FrmPrestamo_Load(object sender, EventArgs e)
         {
 
         }
+
         public void listarPrestamo()
         {
             dgvPrestamo.DataSource = logPrestamo.Instancia.ListarPrestamo();
@@ -35,8 +40,7 @@ namespace Sistema_Prestamos.Mantendedor
         {
             txtIdPrestamo.Text = "";
             txtMontoPrestamo.Text = "";
-            cmbEstadoPrestamo.SelectedIndex = 0;
-            txtIdPrestamo.Focus();
+            cmbEstadoPrestamo.SelectedIndex=0;
         }
         private void LimpiarVariabllesCliente()
         {
@@ -51,35 +55,70 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if((txtIdPrestamo.Text=="") || (txtMontoPrestamo.Text == "") || (txtIdCliente.Text == ""))
             {
-                Prestamo p = new Prestamo();
-                p.idPrestamo = txtIdPrestamo.Text.Trim();
-                p.montPrestamo = Convert.ToDouble(txtMontoPrestamo.Text.Trim());
-                p.estPrestamo = cmbEstadoPrestamo.SelectedItem.ToString();
-                p.idCliente = txtIdCliente.Text.Trim();
-                logPrestamo.Instancia.InsertarPrestamo(p);
+
+                MessageBox.Show("Falta llenar algun casillero");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro.." + ex);
+                try
+                {
+                    Prestamo p = new Prestamo();
+                    p.idPrestamo = txtIdPrestamo.Text.Trim();
+                    p.montPrestamo = Convert.ToDouble(txtMontoPrestamo.Text.Trim());
+                    p.estPrestamo = cmbEstadoPrestamo.SelectedItem.ToString();
+                    p.idCliente = txtIdCliente.Text.Trim();
+                    logPrestamo.Instancia.InsertarPrestamo(p);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro.." + ex);
+                }
+                listarPrestamo();
+                gbCliente.Enabled = false;
+                gbPrestamo.Enabled = false;
+                LimpiarVariables();
+                LimpiarVariabllesCliente();
+                btnAgregar.Visible = true;
+                btnModificar.Visible = true;
             }
+            
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtIdPrestamo.Text == "")
             {
-                Prestamo p = new Prestamo();
-                p.idPrestamo = txtIdPrestamo.Text.Trim();
-                p.montPrestamo = Convert.ToDouble(txtMontoPrestamo.Text.Trim());
-                p.estPrestamo = cmbEstadoPrestamo.SelectedItem.ToString();
-                logPrestamo.Instancia.EditaPrestamo(p);
+                MessageBox.Show("No se selecciono ningun ID");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro.." + ex);
+                try
+                {
+                    Prestamo p = new Prestamo();
+                    p.idPrestamo = txtIdPrestamo.Text.Trim();
+                    p.montPrestamo = Convert.ToDouble(txtMontoPrestamo.Text.Trim());
+                    p.estPrestamo = cmbEstadoPrestamo.SelectedItem.ToString();
+
+
+                    logPrestamo.Instancia.EditaPrestamo(p);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro.." + ex);
+                }
+                listarPrestamo();
+                gbCliente.Enabled = false;
+                gbPrestamo.Enabled = false;
+                LimpiarVariables();
+                LimpiarVariabllesCliente();
+                btnAgregar.Visible = true;
+                btnModificar.Visible = true;
             }
+           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -121,6 +160,54 @@ namespace Sistema_Prestamos.Mantendedor
             txtMontoPrestamo.Text = filaActual.Cells[1].Value.ToString();
             cmbEstadoPrestamo.SelectedItem = Convert.ToString(filaActual.Cells[2].Value.ToString());
             txtIdCliente.Text = filaActual.Cells[3].Value.ToString();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            cmbEstadoPrestamo.SelectedIndex = 0;
+            gbCliente.Enabled = true;
+            gbPrestamo.Enabled = true;
+            listarPrestamo();
+            btnAgregar.Visible = true;
+            LimpiarVariables();
+            LimpiarVariabllesCliente();
+            btnModificar.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarVariables();
+            LimpiarVariabllesCliente();
+            listarPrestamo();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+                txtIdPrestamo.Enabled = false;
+                gbCliente.Enabled = false;
+                gbPrestamo.Enabled = true;
+                LimpiarVariables();
+                LimpiarVariabllesCliente();
+                btnAgregar.Visible = false;
+                btnModificar.Visible = true;
+            
+            
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            LimpiarVariables();
+            LimpiarVariabllesCliente();
+            gbPrestamo.Enabled=false;
+            gbCliente.Enabled = false;
+            btnAgregar.Visible = true;
+            btnModificar.Visible = true;
+            listarPrestamo();
         }
     }
 }

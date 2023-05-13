@@ -35,7 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.dgvPrestamo = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbPrestamo = new System.Windows.Forms.GroupBox();
             this.cmbEstadoPrestamo = new System.Windows.Forms.ComboBox();
             this.txtMontoPrestamo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
             this.txtCelCliente = new System.Windows.Forms.TextBox();
             this.txtDireccionCliente = new System.Windows.Forms.TextBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
@@ -65,8 +65,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamo)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbPrestamo.SuspendLayout();
+            this.gbCliente.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnNuevo
             // 
@@ -101,6 +102,7 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -110,6 +112,7 @@
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalir
             // 
@@ -128,6 +131,7 @@
             this.btnAnular.TabIndex = 10;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // dgvPrestamo
             // 
@@ -141,35 +145,40 @@
             this.dgvPrestamo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamo_CellContentClick);
             this.dgvPrestamo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamo_CellDoubleClick);
             // 
-            // groupBox1
+            // gbPrestamo
             // 
-            this.groupBox1.Controls.Add(this.cmbEstadoPrestamo);
-            this.groupBox1.Controls.Add(this.txtMontoPrestamo);
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.txtIdPrestamo);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(729, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(497, 212);
-            this.groupBox1.TabIndex = 36;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Prestamo";
+            this.gbPrestamo.Controls.Add(this.cmbEstadoPrestamo);
+            this.gbPrestamo.Controls.Add(this.txtMontoPrestamo);
+            this.gbPrestamo.Controls.Add(this.btnCancelar);
+            this.gbPrestamo.Controls.Add(this.btnModificar);
+            this.gbPrestamo.Controls.Add(this.btnAgregar);
+            this.gbPrestamo.Controls.Add(this.txtIdPrestamo);
+            this.gbPrestamo.Controls.Add(this.label6);
+            this.gbPrestamo.Controls.Add(this.label2);
+            this.gbPrestamo.Controls.Add(this.label1);
+            this.gbPrestamo.Location = new System.Drawing.Point(729, 12);
+            this.gbPrestamo.Name = "gbPrestamo";
+            this.gbPrestamo.Size = new System.Drawing.Size(497, 212);
+            this.gbPrestamo.TabIndex = 36;
+            this.gbPrestamo.TabStop = false;
+            this.gbPrestamo.Text = "Prestamo";
             // 
             // cmbEstadoPrestamo
             // 
+            this.cmbEstadoPrestamo.Enabled = false;
             this.cmbEstadoPrestamo.FormattingEnabled = true;
+            this.cmbEstadoPrestamo.Items.AddRange(new object[] {
+            "Pendiente",
+            "Aprobado",
+            "Denegado"});
             this.cmbEstadoPrestamo.Location = new System.Drawing.Point(89, 93);
             this.cmbEstadoPrestamo.Name = "cmbEstadoPrestamo";
-            this.cmbEstadoPrestamo.Size = new System.Drawing.Size(169, 24);
+            this.cmbEstadoPrestamo.Size = new System.Drawing.Size(116, 24);
             this.cmbEstadoPrestamo.TabIndex = 19;
+            this.cmbEstadoPrestamo.Text = "Seleccionar";
             // 
             // txtMontoPrestamo
             // 
-            this.txtMontoPrestamo.Enabled = false;
             this.txtMontoPrestamo.Location = new System.Drawing.Point(225, 42);
             this.txtMontoPrestamo.Name = "txtMontoPrestamo";
             this.txtMontoPrestamo.Size = new System.Drawing.Size(118, 22);
@@ -183,6 +192,7 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -238,30 +248,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Id";
             // 
-            // groupBox2
+            // gbCliente
             // 
-            this.groupBox2.Controls.Add(this.txtCelCliente);
-            this.groupBox2.Controls.Add(this.txtDireccionCliente);
-            this.groupBox2.Controls.Add(this.txtNombreCliente);
-            this.groupBox2.Controls.Add(this.btnSeleccionarCliente);
-            this.groupBox2.Controls.Add(this.txtApellidoCliente);
-            this.groupBox2.Controls.Add(this.txtDniCliente);
-            this.groupBox2.Controls.Add(this.txtIdCliente);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(694, 212);
-            this.groupBox2.TabIndex = 40;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cliente";
+            this.gbCliente.Controls.Add(this.txtCelCliente);
+            this.gbCliente.Controls.Add(this.txtDireccionCliente);
+            this.gbCliente.Controls.Add(this.txtNombreCliente);
+            this.gbCliente.Controls.Add(this.btnSeleccionarCliente);
+            this.gbCliente.Controls.Add(this.txtApellidoCliente);
+            this.gbCliente.Controls.Add(this.txtDniCliente);
+            this.gbCliente.Controls.Add(this.txtIdCliente);
+            this.gbCliente.Controls.Add(this.label4);
+            this.gbCliente.Controls.Add(this.label5);
+            this.gbCliente.Controls.Add(this.label7);
+            this.gbCliente.Controls.Add(this.label9);
+            this.gbCliente.Controls.Add(this.label10);
+            this.gbCliente.Controls.Add(this.label11);
+            this.gbCliente.Location = new System.Drawing.Point(12, 12);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(694, 212);
+            this.gbCliente.TabIndex = 40;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Cliente";
             // 
             // txtCelCliente
             // 
+            this.txtCelCliente.Enabled = false;
             this.txtCelCliente.Location = new System.Drawing.Point(90, 143);
             this.txtCelCliente.Name = "txtCelCliente";
             this.txtCelCliente.Size = new System.Drawing.Size(170, 22);
@@ -269,6 +280,7 @@
             // 
             // txtDireccionCliente
             // 
+            this.txtDireccionCliente.Enabled = false;
             this.txtDireccionCliente.Location = new System.Drawing.Point(380, 93);
             this.txtDireccionCliente.Name = "txtDireccionCliente";
             this.txtDireccionCliente.Size = new System.Drawing.Size(271, 22);
@@ -276,6 +288,7 @@
             // 
             // txtNombreCliente
             // 
+            this.txtNombreCliente.Enabled = false;
             this.txtNombreCliente.Location = new System.Drawing.Point(90, 93);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(170, 22);
@@ -293,6 +306,7 @@
             // 
             // txtApellidoCliente
             // 
+            this.txtApellidoCliente.Enabled = false;
             this.txtApellidoCliente.Location = new System.Drawing.Point(449, 42);
             this.txtApellidoCliente.Name = "txtApellidoCliente";
             this.txtApellidoCliente.Size = new System.Drawing.Size(199, 22);
@@ -300,6 +314,7 @@
             // 
             // txtDniCliente
             // 
+            this.txtDniCliente.Enabled = false;
             this.txtDniCliente.Location = new System.Drawing.Point(220, 45);
             this.txtDniCliente.Name = "txtDniCliente";
             this.txtDniCliente.Size = new System.Drawing.Size(112, 22);
@@ -307,6 +322,7 @@
             // 
             // txtIdCliente
             // 
+            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Location = new System.Drawing.Point(47, 48);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(78, 22);
@@ -411,19 +427,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 710);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgvPrestamo);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbPrestamo);
             this.Name = "FrmPrestamo";
             this.Text = "FrmPrestamo";
             this.Load += new System.EventHandler(this.FrmPrestamo_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamo)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbPrestamo.ResumeLayout(false);
+            this.gbPrestamo.PerformLayout();
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -438,7 +454,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.DataGridView dgvPrestamo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbPrestamo;
         private System.Windows.Forms.ComboBox cmbEstadoPrestamo;
         public System.Windows.Forms.TextBox txtMontoPrestamo;
         private System.Windows.Forms.Button btnCancelar;
@@ -448,7 +464,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbCliente;
         public System.Windows.Forms.TextBox txtCelCliente;
         public System.Windows.Forms.TextBox txtDireccionCliente;
         public System.Windows.Forms.TextBox txtNombreCliente;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema_Prestamos.Buscadores;
 using Sistema_Prestamos.Mantendedor;
 
 namespace Sistema_Prestamos
@@ -17,7 +18,7 @@ namespace Sistema_Prestamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCuenta());
+            Application.Run(new FrmConsolidado());
         }
     }
 }

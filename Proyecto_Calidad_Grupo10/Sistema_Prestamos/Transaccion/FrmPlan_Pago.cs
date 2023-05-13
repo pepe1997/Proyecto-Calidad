@@ -47,7 +47,6 @@ namespace Sistema_Prestamos.Transaccion
         {
             txtIdConsolidado.Text = "";
             txtMesConsolidado.Text = "";
-            txtInteresConsolidado.Text = "";
             txtIdCuenta.Text = "";
             txtSaldoCuenta.Text = "";
             txtIdConsolidado.Focus();
@@ -58,7 +57,6 @@ namespace Sistema_Prestamos.Transaccion
             try
             {
                 Plan_Pago c = new Plan_Pago();
-                c.idPlan = txtIdPlan.Text.Trim();
                 c.mesPlan = Convert.ToInt32(txtMesPlan.Text.Trim());
                 c.capitalRemanente = Convert.ToDouble(txtCapRemanente.Text.Trim());
                 c.capitalDevolver = Convert.ToDouble(txtCapDevolver.Text.Trim());
@@ -79,7 +77,7 @@ namespace Sistema_Prestamos.Transaccion
             try
             {
                 Plan_Pago c = new Plan_Pago();
-                c.idPlan = txtIdPlan.Text.Trim();
+                c.idPlan = Convert.ToInt32(txtIdPlan.Text);
                 c.mesPlan = Convert.ToInt32(txtMesPlan.Text.Trim());
                 c.capitalRemanente = Convert.ToDouble(txtCapRemanente.Text.Trim());
                 c.capitalDevolver = Convert.ToDouble(txtCapDevolver.Text.Trim());

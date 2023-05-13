@@ -39,12 +39,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtIdCuenta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSeleccionarConsolidado = new System.Windows.Forms.Button();
             this.txtMesConsolidado = new System.Windows.Forms.TextBox();
-            this.txtInteresConsolidado = new System.Windows.Forms.TextBox();
             this.txtIdConsolidado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMesPlan = new System.Windows.Forms.TextBox();
@@ -64,6 +61,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtMontoPrestamo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,16 +131,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMontoPrestamo);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSaldoCuenta);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtIdCuenta);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnSeleccionarConsolidado);
             this.groupBox1.Controls.Add(this.txtMesConsolidado);
-            this.groupBox1.Controls.Add(this.txtInteresConsolidado);
             this.groupBox1.Controls.Add(this.txtIdConsolidado);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(740, 12);
             this.groupBox1.Name = "groupBox1";
@@ -168,7 +166,7 @@
             // 
             // txtIdCuenta
             // 
-            this.txtIdCuenta.Location = new System.Drawing.Point(272, 91);
+            this.txtIdCuenta.Location = new System.Drawing.Point(100, 97);
             this.txtIdCuenta.Name = "txtIdCuenta";
             this.txtIdCuenta.Size = new System.Drawing.Size(68, 22);
             this.txtIdCuenta.TabIndex = 14;
@@ -176,21 +174,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 97);
+            this.label3.Location = new System.Drawing.Point(23, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "ID Cuenta";
-            // 
-            // btnSeleccionarConsolidado
-            // 
-            this.btnSeleccionarConsolidado.Location = new System.Drawing.Point(324, 149);
-            this.btnSeleccionarConsolidado.Name = "btnSeleccionarConsolidado";
-            this.btnSeleccionarConsolidado.Size = new System.Drawing.Size(125, 52);
-            this.btnSeleccionarConsolidado.TabIndex = 12;
-            this.btnSeleccionarConsolidado.Text = "Seleccionar";
-            this.btnSeleccionarConsolidado.UseVisualStyleBackColor = true;
-            this.btnSeleccionarConsolidado.Click += new System.EventHandler(this.btnSeleccionarConsolidado_Click);
             // 
             // txtMesConsolidado
             // 
@@ -198,13 +186,6 @@
             this.txtMesConsolidado.Name = "txtMesConsolidado";
             this.txtMesConsolidado.Size = new System.Drawing.Size(112, 22);
             this.txtMesConsolidado.TabIndex = 10;
-            // 
-            // txtInteresConsolidado
-            // 
-            this.txtInteresConsolidado.Location = new System.Drawing.Point(79, 91);
-            this.txtInteresConsolidado.Name = "txtInteresConsolidado";
-            this.txtInteresConsolidado.Size = new System.Drawing.Size(54, 22);
-            this.txtInteresConsolidado.TabIndex = 9;
             // 
             // txtIdConsolidado
             // 
@@ -221,15 +202,6 @@
             this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "# Meses";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Interes";
             // 
             // label1
             // 
@@ -407,6 +379,22 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Id";
             // 
+            // txtMontoPrestamo
+            // 
+            this.txtMontoPrestamo.Location = new System.Drawing.Point(282, 97);
+            this.txtMontoPrestamo.Name = "txtMontoPrestamo";
+            this.txtMontoPrestamo.Size = new System.Drawing.Size(104, 22);
+            this.txtMontoPrestamo.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Monto";
+            // 
             // FrmPlan_Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -439,7 +427,6 @@
         private System.Windows.Forms.DataGridView dgvPlan;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnCancelar;
@@ -459,13 +446,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpFechaPlan;
         private System.Windows.Forms.TextBox txtMesPlan;
-        private System.Windows.Forms.Button btnSeleccionarConsolidado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtInteresConsolidado;
         public System.Windows.Forms.TextBox txtIdConsolidado;
         public System.Windows.Forms.TextBox txtMesConsolidado;
         public System.Windows.Forms.TextBox txtSaldoCuenta;
         public System.Windows.Forms.TextBox txtIdCuenta;
+        public System.Windows.Forms.TextBox txtMontoPrestamo;
+        private System.Windows.Forms.Label label2;
     }
 }

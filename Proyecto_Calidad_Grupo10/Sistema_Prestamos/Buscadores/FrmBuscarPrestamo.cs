@@ -48,7 +48,8 @@ namespace Sistema_Prestamos.Buscadores
             FrmConsolidado fr = Owner as FrmConsolidado;
             fr.txtIdPrestamo.Text = dgvPrestamo.CurrentRow.Cells[0].Value.ToString();
             fr.txtMontoPrestamo.Text = dgvPrestamo.CurrentRow.Cells[1].Value.ToString();
-            fr.cmbEstadoPrestamo.SelectedText = dgvPrestamo.CurrentRow.Cells[2].Value.ToString();
+            fr.cmbEstadoPrestamo.SelectedItem = dgvPrestamo.CurrentRow.Cells[2].Value.ToString();
+            fr.txtIdCliente.Text = dgvPrestamo.CurrentRow.Cells[3].Value.ToString();
             Close();
         }
 

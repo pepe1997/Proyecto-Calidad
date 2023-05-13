@@ -81,6 +81,7 @@ namespace Sistema_Prestamos.Mantendedor
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            LimpiarVariables();
             groupBox1.Enabled = false;
         }
 
