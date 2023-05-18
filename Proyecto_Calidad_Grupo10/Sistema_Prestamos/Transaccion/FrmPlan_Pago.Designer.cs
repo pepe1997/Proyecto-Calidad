@@ -30,11 +30,10 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.dgvPlan = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbConsolidado = new System.Windows.Forms.GroupBox();
             this.txtSaldoCuenta = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtIdCuenta = new System.Windows.Forms.TextBox();
@@ -43,11 +42,10 @@
             this.txtIdConsolidado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbPlan = new System.Windows.Forms.GroupBox();
             this.txtMesPlan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpFechaPlan = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTotalPago = new System.Windows.Forms.TextBox();
@@ -65,14 +63,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbConsolidado.SuspendLayout();
+            this.gbPlan.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnNuevo);
-            this.groupBox3.Controls.Add(this.btnEditar);
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnAnular);
             this.groupBox3.Location = new System.Drawing.Point(740, 239);
@@ -90,15 +87,7 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(181, 32);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(99, 49);
-            this.btnEditar.TabIndex = 9;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSalir
             // 
@@ -111,12 +100,13 @@
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(367, 32);
+            this.btnAnular.Location = new System.Drawing.Point(162, 32);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(99, 49);
             this.btnAnular.TabIndex = 10;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // dgvPlan
             // 
@@ -129,24 +119,24 @@
             this.dgvPlan.TabIndex = 32;
             this.dgvPlan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellDoubleClick);
             // 
-            // groupBox1
+            // gbConsolidado
             // 
-            this.groupBox1.Controls.Add(this.txtMontoPrestamo);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtSaldoCuenta);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.txtIdCuenta);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtMesConsolidado);
-            this.groupBox1.Controls.Add(this.txtIdConsolidado);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(740, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(497, 213);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Consolidado";
+            this.gbConsolidado.Controls.Add(this.txtMontoPrestamo);
+            this.gbConsolidado.Controls.Add(this.label2);
+            this.gbConsolidado.Controls.Add(this.txtSaldoCuenta);
+            this.gbConsolidado.Controls.Add(this.label12);
+            this.gbConsolidado.Controls.Add(this.txtIdCuenta);
+            this.gbConsolidado.Controls.Add(this.label3);
+            this.gbConsolidado.Controls.Add(this.txtMesConsolidado);
+            this.gbConsolidado.Controls.Add(this.txtIdConsolidado);
+            this.gbConsolidado.Controls.Add(this.label6);
+            this.gbConsolidado.Controls.Add(this.label1);
+            this.gbConsolidado.Location = new System.Drawing.Point(740, 12);
+            this.gbConsolidado.Name = "gbConsolidado";
+            this.gbConsolidado.Size = new System.Drawing.Size(497, 213);
+            this.gbConsolidado.TabIndex = 31;
+            this.gbConsolidado.TabStop = false;
+            this.gbConsolidado.Text = "Consolidado";
             // 
             // txtSaldoCuenta
             // 
@@ -193,6 +183,7 @@
             this.txtIdConsolidado.Name = "txtIdConsolidado";
             this.txtIdConsolidado.Size = new System.Drawing.Size(89, 22);
             this.txtIdConsolidado.TabIndex = 6;
+            this.txtIdConsolidado.TextChanged += new System.EventHandler(this.txtIdConsolidado_TextChanged);
             // 
             // label6
             // 
@@ -212,38 +203,39 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Id";
             // 
-            // groupBox2
+            // gbPlan
             // 
-            this.groupBox2.Controls.Add(this.txtMesPlan);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.dtpFechaPlan);
-            this.groupBox2.Controls.Add(this.btnCancelar);
-            this.groupBox2.Controls.Add(this.btnModificar);
-            this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Controls.Add(this.txtTotalPago);
-            this.groupBox2.Controls.Add(this.txtInteresPLan);
-            this.groupBox2.Controls.Add(this.txtCapDevolver);
-            this.groupBox2.Controls.Add(this.txtCapRemanente);
-            this.groupBox2.Controls.Add(this.txtIdPlan);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(22, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(694, 337);
-            this.groupBox2.TabIndex = 34;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Plan Pago";
+            this.gbPlan.Controls.Add(this.txtMesPlan);
+            this.gbPlan.Controls.Add(this.label11);
+            this.gbPlan.Controls.Add(this.dtpFechaPlan);
+            this.gbPlan.Controls.Add(this.btnModificar);
+            this.gbPlan.Controls.Add(this.btnAgregar);
+            this.gbPlan.Controls.Add(this.txtTotalPago);
+            this.gbPlan.Controls.Add(this.txtInteresPLan);
+            this.gbPlan.Controls.Add(this.txtCapDevolver);
+            this.gbPlan.Controls.Add(this.txtCapRemanente);
+            this.gbPlan.Controls.Add(this.txtIdPlan);
+            this.gbPlan.Controls.Add(this.label4);
+            this.gbPlan.Controls.Add(this.label5);
+            this.gbPlan.Controls.Add(this.label7);
+            this.gbPlan.Controls.Add(this.label8);
+            this.gbPlan.Controls.Add(this.label9);
+            this.gbPlan.Controls.Add(this.label10);
+            this.gbPlan.Location = new System.Drawing.Point(22, 12);
+            this.gbPlan.Name = "gbPlan";
+            this.gbPlan.Size = new System.Drawing.Size(694, 337);
+            this.gbPlan.TabIndex = 34;
+            this.gbPlan.TabStop = false;
+            this.gbPlan.Text = "Plan Pago";
             // 
             // txtMesPlan
             // 
+            this.txtMesPlan.Enabled = false;
             this.txtMesPlan.Location = new System.Drawing.Point(248, 45);
             this.txtMesPlan.Name = "txtMesPlan";
             this.txtMesPlan.Size = new System.Drawing.Size(98, 22);
             this.txtMesPlan.TabIndex = 21;
+            this.txtMesPlan.TextChanged += new System.EventHandler(this.txtMesPlan_TextChanged);
             // 
             // label11
             // 
@@ -261,18 +253,9 @@
             this.dtpFechaPlan.Size = new System.Drawing.Size(200, 22);
             this.dtpFechaPlan.TabIndex = 19;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(382, 259);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(119, 49);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(207, 259);
+            this.btnModificar.Location = new System.Drawing.Point(539, 259);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(119, 49);
             this.btnModificar.TabIndex = 16;
@@ -282,7 +265,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(41, 259);
+            this.btnAgregar.Location = new System.Drawing.Point(382, 259);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(119, 49);
             this.btnAgregar.TabIndex = 15;
@@ -292,6 +275,7 @@
             // 
             // txtTotalPago
             // 
+            this.txtTotalPago.Enabled = false;
             this.txtTotalPago.Location = new System.Drawing.Point(137, 190);
             this.txtTotalPago.Name = "txtTotalPago";
             this.txtTotalPago.Size = new System.Drawing.Size(106, 22);
@@ -299,6 +283,7 @@
             // 
             // txtInteresPLan
             // 
+            this.txtInteresPLan.Enabled = false;
             this.txtInteresPLan.Location = new System.Drawing.Point(404, 114);
             this.txtInteresPLan.Name = "txtInteresPLan";
             this.txtInteresPLan.Size = new System.Drawing.Size(97, 22);
@@ -306,6 +291,7 @@
             // 
             // txtCapDevolver
             // 
+            this.txtCapDevolver.Enabled = false;
             this.txtCapDevolver.Location = new System.Drawing.Point(172, 114);
             this.txtCapDevolver.Name = "txtCapDevolver";
             this.txtCapDevolver.Size = new System.Drawing.Size(112, 22);
@@ -313,6 +299,7 @@
             // 
             // txtCapRemanente
             // 
+            this.txtCapRemanente.Enabled = false;
             this.txtCapRemanente.Location = new System.Drawing.Point(539, 45);
             this.txtCapRemanente.Name = "txtCapRemanente";
             this.txtCapRemanente.Size = new System.Drawing.Size(98, 22);
@@ -320,6 +307,7 @@
             // 
             // txtIdPlan
             // 
+            this.txtIdPlan.Enabled = false;
             this.txtIdPlan.Location = new System.Drawing.Point(67, 45);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.Size = new System.Drawing.Size(78, 22);
@@ -400,19 +388,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1335, 777);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbPlan);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgvPlan);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbConsolidado);
             this.Name = "FrmPlan_Pago";
             this.Text = "FrmPlan_Pago";
             this.Load += new System.EventHandler(this.FrmPlan_Pago_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbConsolidado.ResumeLayout(false);
+            this.gbConsolidado.PerformLayout();
+            this.gbPlan.ResumeLayout(false);
+            this.gbPlan.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,15 +409,13 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.DataGridView dgvPlan;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbConsolidado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.GroupBox gbPlan;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtTotalPago;

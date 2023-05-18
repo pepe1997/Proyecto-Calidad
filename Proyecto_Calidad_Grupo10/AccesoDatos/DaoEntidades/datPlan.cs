@@ -40,10 +40,10 @@ namespace AccesoDatos.DaoEntidades
                 {
                     Plan_Pago Plan = new Plan_Pago();
                     Plan.idPlan = Convert.ToInt32(dr["idPlan"].ToString());
-                    Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString()) ;
+                    Plan.mesPlan = Convert.ToInt32(dr["mesPlan"].ToString());
                     Plan.capitalRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
                     Plan.capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
-                    Plan.interes = Convert.ToDouble(dr["interes"].ToString()) ;
+                    Plan.interes = Convert.ToDouble(dr["interes"].ToString());
                     Plan.totalPago = Convert.ToDouble(dr["totalPago"].ToString());
                     Plan.fechPago = Convert.ToDateTime(dr["fechPago"].ToString());
                     Plan.idConsolidado = dr["idConsolidado"].ToString();
@@ -123,7 +123,7 @@ namespace AccesoDatos.DaoEntidades
             return edita;
         }
 
-        
+
 
         public List<Plan_Pago> BuscarPlan(string dato)
         {
@@ -135,7 +135,7 @@ namespace AccesoDatos.DaoEntidades
                 cmd = new SqlCommand("spBuscarPlan", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idPlan", dato);
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -164,7 +164,235 @@ namespace AccesoDatos.DaoEntidades
             }
             return lista;
         }
+        public int CalcularMes(string dato)
+        {
+            SqlCommand cmd = null;
+            int mesPlan=1;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularMes", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    
+                   mesPlan = Convert.ToInt32(dr["mesPlan"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + mesPlan);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return mesPlan;
+
+            
+        }
+
+        public Double ObtenerCapRemanente(string dato,int mes)
+        {
+            SqlCommand cmd = null;
+            Double CapRemanente = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spObtenerCapRemanente", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@mesPlan", mes);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    CapRemanente = Convert.ToDouble(dr["capitalRemanente"].ToString());
+                    Console.WriteLine("La capital remanente es: " + CapRemanente);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return CapRemanente;
+        }
+
+        public Double ObtenerCapDevolver(string dato,int mes)
+        {
+            SqlCommand cmd = null;
+            Double CapDevolver = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spObtenerCapDevolver", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@mesPlan", mes);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    CapDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
+                    Console.WriteLine("La capital devolver es: " + CapDevolver);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return CapDevolver;
+        }
+
+        public Double ObtenerInteres(string dato,int mes)
+        {
+            SqlCommand cmd = null;
+            Double Interes = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spObtenerInteres", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@mesPlan", mes);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Interes = Convert.ToDouble(dr["interes"].ToString());
+                    Console.WriteLine("El interes es: " + Interes);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return Interes;
+        }
+
+        public int CalcularTotalCapDevolver(string dato)
+        {
+            SqlCommand cmd = null;
+            int capitalDevolver = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularTotalCapDevolver", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    capitalDevolver = Convert.ToInt32(dr["capitalDevolver"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + capitalDevolver);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return capitalDevolver;
+        }
+
+        public int CalcularTotalInteres(string dato)
+        {
+            SqlCommand cmd = null;
+            int interes = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularTotalInteres", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    interes = Convert.ToInt32(dr["interes"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + interes);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return interes;
+        }
+
+        public int CalcularTotalPago(string dato)
+        {
+            SqlCommand cmd = null;
+            int totalPago = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularTotalPago", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@totalPago", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    totalPago = Convert.ToInt32(dr["totalPago"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + totalPago);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return totalPago;
+        }
 
         #endregion metodos
     }

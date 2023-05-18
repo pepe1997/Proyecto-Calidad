@@ -164,6 +164,8 @@ namespace Sistema_Prestamos.Mantendedor
             gbConsolidado.Enabled = true;
             gbCuenta.Enabled = true;
             gbPrestamo.Enabled = true;
+            btnAgregar.Visible = false;
+            btnCancelar.Visible = false;
             
             if ((txtIdPrestamo.Text.Trim() == "") || (txtIdCuenta.Text.Trim() == "") || (txtIdConsolidado.Text.Trim() == "") ||
                 (txtSaldo.Text.Trim() == "") || (txtIdCliente.Text.Trim() == ""))
@@ -227,6 +229,7 @@ namespace Sistema_Prestamos.Mantendedor
             gbCuenta.Enabled = true;
             gbPrestamo.Enabled = true;
             btnAgregar.Visible = true;
+            btnCancelar.Visible = true;
 
         }
 
@@ -236,6 +239,9 @@ namespace Sistema_Prestamos.Mantendedor
         {
             LimpiarVariables();
             listarConsolidado();
+            gbConsolidado.Enabled=false;
+            gbCuenta.Enabled=false;
+            gbPrestamo.Enabled = false;
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
