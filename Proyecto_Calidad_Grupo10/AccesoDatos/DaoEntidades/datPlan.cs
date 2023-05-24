@@ -378,7 +378,7 @@ namespace AccesoDatos.DaoEntidades
                 {
 
                     totalPago = Convert.ToDouble(dr["totalPago"].ToString());
-                    Console.WriteLine("El número de meses en el plan de pago es: " + totalPago);
+                    Console.WriteLine("El Total de pago es: " + totalPago);
 
                 }
 

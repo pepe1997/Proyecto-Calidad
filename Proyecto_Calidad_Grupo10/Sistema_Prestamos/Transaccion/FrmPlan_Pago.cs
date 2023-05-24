@@ -87,17 +87,24 @@ namespace Sistema_Prestamos.Transaccion
         }
         private void Actualizarsaldo()
         {
-            string idCuenta = txtIdCuenta.Text;
-            Double saldo = Convert.ToDouble(txtTotalPago.Text.Trim());
-            Boolean v = logCuenta.Instancia.spActualizarSaldo(idCuenta, saldo);
-            if (v == true)
+            try
             {
-                Console.WriteLine("Se actualizo");
-            }
-            else
+                string idCuenta = txtIdCuenta.Text;
+                Double saldo = Convert.ToDouble(txtTotalPago.Text.Trim());
+                Boolean v = logCuenta.Instancia.spActualizarSaldo(idCuenta, saldo);
+                if (v == true)
+                {
+                    Console.WriteLine("Se actualizo");
+                }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error");
+                }
+            }catch (Exception ex)
             {
-                Console.WriteLine("Ocurrio un error");
+                MessageBox.Show(ex.Message);
             }
+            
         }
         public void listarPlan()
         {
@@ -151,13 +158,12 @@ namespace Sistema_Prestamos.Transaccion
                     MessageBox.Show("Erro.." + ex);
                 }
                 listarPlan();
-                LimpiarVaraiblesConsolidado();
-                LimpiarVariables();
                 ActulizarTotalCapDevolver();
                 ActulizarTotalInteres();
                 ActulizarTotalPago();
                 Actualizarsaldo();
                 logCuenta.Instancia.spActualizarSaldo(idCu, monTo);
+                LimpiarVariables();
 
             }
             
@@ -175,6 +181,7 @@ namespace Sistema_Prestamos.Transaccion
         {
             txtCapDevolver.Enabled = true;
             txtInteresPLan.Enabled = true;
+            CalcularTotalPago();
             
             
         }
@@ -221,16 +228,26 @@ namespace Sistema_Prestamos.Transaccion
        
         
        
-        private void CalcularTotalPago()
+       private void CalcularTotalPago()
         {
-            Double CapD = Convert.ToDouble(txtCapDevolver.Text.Trim());
-            Double Inte = Convert.ToDouble(txtInteresPLan.Text.Trim());
-            Double total = CapD + Inte;
-            txtTotalPago.Text = total.ToString("N2");
+            try
+            {
+                Double CapD = Convert.ToDouble(txtCapDevolver.Text.Trim());
+                Double Inte = Convert.ToDouble(txtInteresPLan.Text.Trim());
+                Double total = CapD + Inte;
+                txtTotalPago.Text = total.ToString("N2");
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            btnModificar.Enabled = true;
+            btnAgregar.Enabled = true;
             CalcularMes();
             
             int mesPlan = Convert.ToInt32(txtMesPlan.Text);
@@ -293,6 +310,8 @@ namespace Sistema_Prestamos.Transaccion
                 }
                 
             }
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = true;
             
 
 
@@ -308,6 +327,7 @@ namespace Sistema_Prestamos.Transaccion
 
         private void txtTotalPago_TextChanged(object sender, EventArgs e)
         {
+
         }
     }
 }

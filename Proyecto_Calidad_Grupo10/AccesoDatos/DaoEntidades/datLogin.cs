@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos.DataBase;
-using entCuenta;
 using entLogin;
-using entCliente;
+using System.Text.RegularExpressions;
 
 namespace AccesoDatos.DaoEntidades
 {
@@ -87,6 +86,17 @@ namespace AccesoDatos.DaoEntidades
             finally { cmd.Connection.Close(); }
             return rol;
         }
+
+        public Boolean ValidarNumeroCelular(string numeroCelular)
+        {
+            
+            string patron = @"^[1-9]\d{8}$";
+            Regex regex = new Regex(patron);
+            bool esValido = regex.IsMatch(numeroCelular);
+
+            return esValido;
+        }
+
         #endregion metodos
     }
 }

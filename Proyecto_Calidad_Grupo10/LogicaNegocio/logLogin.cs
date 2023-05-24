@@ -37,6 +37,10 @@ namespace LogicaNegocio
         {
             datLogin.Instancia.InsertarUsuario(log);
         }
+        public Boolean VerificarCelular(string num)
+        {
+            return datLogin.Instancia.ValidarNumeroCelular(num);
+        }
 
         #endregion metodos
     }
