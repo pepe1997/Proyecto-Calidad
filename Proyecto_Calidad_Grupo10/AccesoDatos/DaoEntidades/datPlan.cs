@@ -295,10 +295,10 @@ namespace AccesoDatos.DaoEntidades
             return Interes;
         }
 
-        public int CalcularTotalCapDevolver(string dato)
+        public Double CalcularTotalCapDevolver(string dato)
         {
             SqlCommand cmd = null;
-            int capitalDevolver = 0;
+            Double capitalDevolver = 0;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
@@ -311,7 +311,7 @@ namespace AccesoDatos.DaoEntidades
                 if (dr.Read())
                 {
 
-                    capitalDevolver = Convert.ToInt32(dr["capitalDevolver"].ToString());
+                    capitalDevolver = Convert.ToDouble(dr["capitalDevolver"].ToString());
                     Console.WriteLine("El número de meses en el plan de pago es: " + capitalDevolver);
 
                 }
@@ -328,10 +328,10 @@ namespace AccesoDatos.DaoEntidades
             return capitalDevolver;
         }
 
-        public int CalcularTotalInteres(string dato)
+        public Double CalcularTotalInteres(string dato)
         {
             SqlCommand cmd = null;
-            int interes = 0;
+            Double interes = 0;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
@@ -344,7 +344,7 @@ namespace AccesoDatos.DaoEntidades
                 if (dr.Read())
                 {
 
-                    interes = Convert.ToInt32(dr["interes"].ToString());
+                    interes = Convert.ToDouble(dr["interes"].ToString());
                     Console.WriteLine("El número de meses en el plan de pago es: " + interes);
 
                 }
@@ -361,23 +361,23 @@ namespace AccesoDatos.DaoEntidades
             return interes;
         }
 
-        public int CalcularTotalPago(string dato)
+        public Double CalcularTotalPago(string dato)
         {
             SqlCommand cmd = null;
-            int totalPago = 0;
+            Double totalPago = 0;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
                 cmd = new SqlCommand("spCalcularTotalPago", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@totalPago", dato);
+                cmd.Parameters.AddWithValue("@idConsolidado ", dato);
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
 
-                    totalPago = Convert.ToInt32(dr["totalPago"].ToString());
+                    totalPago = Convert.ToDouble(dr["totalPago"].ToString());
                     Console.WriteLine("El número de meses en el plan de pago es: " + totalPago);
 
                 }

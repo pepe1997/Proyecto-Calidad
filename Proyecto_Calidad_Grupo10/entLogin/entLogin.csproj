@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3F5697F-431F-49E1-B166-C4B76373E1C2}</ProjectGuid>
+    <ProjectGuid>{D5A2A779-0D1C-45BF-8726-CF921E1D871A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AccesoDatos</RootNamespace>
-    <AssemblyName>AccesoDatos</AssemblyName>
+    <RootNamespace>entLogin</RootNamespace>
+    <AssemblyName>entLogin</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,45 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DaoEntidades\datCliente.cs" />
-    <Compile Include="DaoEntidades\datConsolidado.cs" />
-    <Compile Include="DaoEntidades\datCuenta.cs" />
-    <Compile Include="DaoEntidades\datLogin.cs" />
-    <Compile Include="DaoEntidades\datPlan.cs" />
-    <Compile Include="DaoEntidades\datPrestamo.cs" />
-    <Compile Include="DaoEntidades\datTipo_Cuenta.cs" />
-    <Compile Include="DataBase\Conexion.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\entCliente\entCliente.csproj">
-      <Project>{d1ec8ee5-b8b4-46fb-9a53-fde81ef83fe7}</Project>
-      <Name>entCliente</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entConsolidado\entConsolidado.csproj">
-      <Project>{0e139f31-a7d6-46ed-8cdd-fd8894aad64b}</Project>
-      <Name>entConsolidado</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entCuenta\entCuenta.csproj">
-      <Project>{db14350d-7e6e-4f7f-823e-9b8d9ff3a338}</Project>
-      <Name>entCuenta</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entLogin\entLogin.csproj">
-      <Project>{d5a2a779-0d1c-45bf-8726-cf921e1d871a}</Project>
-      <Name>entLogin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entPlan_Pago\entPlan_Pago.csproj">
-      <Project>{3c52d066-1f7c-4ddb-8af9-8744c771f946}</Project>
-      <Name>entPlan_Pago</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entPrestamo\entPrestamo.csproj">
-      <Project>{c66e92da-992a-4afa-8b76-8e6d4c4b80b8}</Project>
-      <Name>entPrestamo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\entTipo_Cuenta\entTipo_Cuenta.csproj">
-      <Project>{97d47e55-3f52-44c9-bdd9-1e09d09e62ab}</Project>
-      <Name>entTipo_Cuenta</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

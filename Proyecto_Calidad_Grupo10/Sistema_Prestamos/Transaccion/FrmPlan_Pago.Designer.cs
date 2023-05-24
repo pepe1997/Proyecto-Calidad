@@ -280,6 +280,7 @@
             this.txtTotalPago.Name = "txtTotalPago";
             this.txtTotalPago.Size = new System.Drawing.Size(106, 22);
             this.txtTotalPago.TabIndex = 11;
+            this.txtTotalPago.TextChanged += new System.EventHandler(this.txtTotalPago_TextChanged);
             // 
             // txtInteresPLan
             // 

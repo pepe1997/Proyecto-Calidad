@@ -43,6 +43,18 @@ namespace LogicaNegocio
             return datConsolidado.Instancia.BuscarConsolidado(dato);
 
         }
+        public Boolean ActualizarDevTotal(string dato,double capDev)
+        {  
+           return datConsolidado.Instancia.ActualizarDevTotal(dato, capDev);  
+        }
+        public Boolean ActualizarIntTotal(string dato, double capDev)
+        {
+            return datConsolidado.Instancia.ActualizarIntTotal(dato, capDev);
+        }
+        public Boolean spActualizarMontTotal(string dato, double capDev)
+        {
+            return datConsolidado.Instancia.ActualizarMontTotal(dato, capDev);
+        }
     }
     #endregion metodos
 }

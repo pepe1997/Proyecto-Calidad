@@ -1,0 +1,43 @@
+﻿using AccesoDatos.DaoEntidades;
+using entCuenta;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using entLogin;
+using System.Runtime.ConstrainedExecution;
+using entCliente;
+
+namespace LogicaNegocio
+{
+    public class logLogin
+    {
+        #region singleton
+        private static readonly logLogin UnicaInstancia = new logLogin();
+        public static logLogin Instancia
+        {
+            get
+            {
+                return logLogin.UnicaInstancia;
+            }
+        }
+
+        #endregion singleton
+
+        #region metodos
+
+        public String VerificaAcceso(Login log)
+        {
+           
+            return datLogin.Instancia.VerificaAcceso(log);
+
+        }
+        public void InsertarUsuario(Login log)
+        {
+            datLogin.Instancia.InsertarUsuario(log);
+        }
+
+        #endregion metodos
+    }
+}

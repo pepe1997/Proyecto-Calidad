@@ -100,6 +100,24 @@
     <Compile Include="Mantendedor\FrmPrestamo.Designer.cs">
       <DependentUpon>FrmPrestamo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\FrmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\FrmRegistro.Designer.cs">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaccion\FrmPlan_Pago.cs">
@@ -135,6 +153,15 @@
     <EmbeddedResource Include="Mantendedor\FrmPrestamo.resx">
       <DependentUpon>FrmPrestamo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\FrmRegistro.resx">
+      <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -160,9 +187,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Principal\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\entCliente\entCliente.csproj">
       <Project>{d1ec8ee5-b8b4-46fb-9a53-fde81ef83fe7}</Project>
@@ -175,6 +200,10 @@
     <ProjectReference Include="..\entCuenta\entCuenta.csproj">
       <Project>{db14350d-7e6e-4f7f-823e-9b8d9ff3a338}</Project>
       <Name>entCuenta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entLogin\entLogin.csproj">
+      <Project>{d5a2a779-0d1c-45bf-8726-cf921e1d871a}</Project>
+      <Name>entLogin</Name>
     </ProjectReference>
     <ProjectReference Include="..\entPlan_Pago\entPlan_Pago.csproj">
       <Project>{3c52d066-1f7c-4ddb-8af9-8744c771f946}</Project>

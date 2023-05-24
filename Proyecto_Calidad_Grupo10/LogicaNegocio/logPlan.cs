@@ -4,6 +4,8 @@ using entPlan_Pago;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,7 +61,20 @@ namespace LogicaNegocio
             return datPlan.Instancia.BuscarPlan(dato);
 
         }
-        
+        public Double CalcularTotalCapDevolver(string dato)
+        {
+            return datPlan.Instancia.CalcularTotalCapDevolver(dato);
+        }
+        public Double CalcularTotalInteres(string dato)
+        {
+            return datPlan.Instancia.CalcularTotalInteres(dato);
+        }
+        public Double CalcularTotalPago(string dato)
+        {
+            return datPlan.Instancia.CalcularTotalPago(dato);
+        }
+
+
     }
     #endregion metodos
 }

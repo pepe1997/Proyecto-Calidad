@@ -166,6 +166,82 @@ namespace AccesoDatos.DaoEntidades
             return lista;
         }
 
+        public Boolean ActualizarDevTotal(string dato,double capDev)
+        {
+            SqlCommand cmd = null;
+            Boolean actualiza = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spActualizarDevTotal", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@devolucionTotal", capDev);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    actualiza = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return actualiza;
+        }
+        public Boolean ActualizarIntTotal(string dato, double Inte)
+        {
+            SqlCommand cmd = null;
+            Boolean actualiza = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spActualizarIntTotal", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@interesesTotal", Inte);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    actualiza = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return actualiza;
+        }
+        public Boolean ActualizarMontTotal(string dato, double Total)
+        {
+            SqlCommand cmd = null;
+            Boolean actualiza = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spActualizarMontTotal", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cmd.Parameters.AddWithValue("@montoTotal", Total);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    actualiza = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return actualiza;
+        }
+
 
         #endregion metodos
     }

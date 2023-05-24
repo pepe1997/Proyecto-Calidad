@@ -156,7 +156,31 @@ namespace AccesoDatos.DaoEntidades
             return lista;
         }
 
-
+        public Boolean ActualizarSaldo(string dato, double saldo)
+        {
+            SqlCommand cmd = null;
+            Boolean actualiza = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spActualizarSaldo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idCuenta", dato);
+                cmd.Parameters.AddWithValue("@salCuenta", saldo);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    actualiza = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally { cmd.Connection.Close(); }
+            return actualiza;
+        }
 
         #endregion metodos
     }

@@ -91,6 +91,7 @@ namespace Sistema_Prestamos.Mantendedor
             LimpiarVariables();
             LimpiarVariablesTip();
             LimpiarVariabllesCliente();
+            gbCuenta.Enabled = false;
 
             listarCuenta();
         }
@@ -113,6 +114,7 @@ namespace Sistema_Prestamos.Mantendedor
             LimpiarVariables();
             LimpiarVariablesTip();
             LimpiarVariabllesCliente();
+            gbCuenta.Enabled = false;
             listarCuenta();
         }
 

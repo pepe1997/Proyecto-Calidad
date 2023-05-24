@@ -43,7 +43,11 @@ namespace LogicaNegocio
             return datCuenta.Instancia.BuscarCuenta(dato);
 
         }
-       
+        public Boolean spActualizarSaldo(string dato, double saldo)
+        {
+            return datCuenta.Instancia.ActualizarSaldo(dato, saldo);
+        }
+
     }
     #endregion metodos
 }

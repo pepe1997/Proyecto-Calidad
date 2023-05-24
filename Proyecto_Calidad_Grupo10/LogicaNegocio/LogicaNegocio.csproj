@@ -44,6 +44,7 @@
     <Compile Include="logCliente.cs" />
     <Compile Include="logConsolidado.cs" />
     <Compile Include="logCuenta.cs" />
+    <Compile Include="logLogin.cs" />
     <Compile Include="logPlan.cs" />
     <Compile Include="logPrestamo.cs" />
     <Compile Include="logTipo_Cuenta.cs" />
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\entCuenta\entCuenta.csproj">
       <Project>{db14350d-7e6e-4f7f-823e-9b8d9ff3a338}</Project>
       <Name>entCuenta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entLogin\entLogin.csproj">
+      <Project>{d5a2a779-0d1c-45bf-8726-cf921e1d871a}</Project>
+      <Name>entLogin</Name>
     </ProjectReference>
     <ProjectReference Include="..\entPlan_Pago\entPlan_Pago.csproj">
       <Project>{3c52d066-1f7c-4ddb-8af9-8744c771f946}</Project>

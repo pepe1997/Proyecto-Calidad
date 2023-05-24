@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Prestamos.Buscadores;
 using Sistema_Prestamos.Mantendedor;
+using Sistema_Prestamos.Principal;
 
 namespace Sistema_Prestamos
 {
@@ -18,7 +19,7 @@ namespace Sistema_Prestamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConsolidado());
+            Application.Run(new FrmLogin());
         }
     }
 }

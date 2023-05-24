@@ -22,10 +22,82 @@ namespace Sistema_Prestamos.Transaccion
         public FrmPlan_Pago()
         {
             InitializeComponent();
+            gbConsolidado.Enabled = false;
         }
         private void FrmPlan_Pago_Load(object sender, EventArgs e)
         {
 
+        }
+        private Double CalcularTotalCapDevolver()
+        {
+            string idConsolidado = txtIdConsolidado.Text.Trim();
+            return logPlan.Instancia.CalcularTotalCapDevolver(idConsolidado);
+        }
+        private Double CalcularTotalInteres()
+        {
+            string idConsolidado = txtIdConsolidado.Text;
+            return logPlan.Instancia.CalcularTotalInteres(idConsolidado);
+        }
+        private Double CalcularTotalPagoPlan()
+        {
+            string idConsolidado = txtIdConsolidado.Text;
+            return logPlan.Instancia.CalcularTotalPago(idConsolidado);
+        }
+        private void ActulizarTotalCapDevolver()
+        {
+            string idCon = txtIdConsolidado.Text;
+            Double CapDev = CalcularTotalCapDevolver();
+            Boolean v = logConsolidado.Instancia.ActualizarDevTotal(idCon,CapDev);
+            if (v == true)
+            {
+                Console.WriteLine("Se actualizo");
+            }
+            else
+            {
+                Console.WriteLine("Ocurrio un error");
+            }
+        }
+        private void ActulizarTotalInteres()
+        {
+            string idCon = txtIdConsolidado.Text;
+            Double Inte = CalcularTotalInteres();
+            Boolean v = logConsolidado.Instancia.ActualizarIntTotal(idCon, Inte);
+            if (v == true)
+            {
+                Console.WriteLine("Se actualizo");
+            }
+            else
+            {
+                Console.WriteLine("Ocurrio un error");
+            }
+        }
+        private void ActulizarTotalPago()
+        {
+            string idCon = txtIdConsolidado.Text;
+            Double Pago = CalcularTotalPagoPlan();
+            Boolean v = logConsolidado.Instancia.spActualizarMontTotal(idCon, Pago);
+            if (v == true)
+            {
+                Console.WriteLine("Se actualizo");
+            }
+            else
+            {
+                Console.WriteLine("Ocurrio un error");
+            }
+        }
+        private void Actualizarsaldo()
+        {
+            string idCuenta = txtIdCuenta.Text;
+            Double saldo = Convert.ToDouble(txtTotalPago.Text.Trim());
+            Boolean v = logCuenta.Instancia.spActualizarSaldo(idCuenta, saldo);
+            if (v == true)
+            {
+                Console.WriteLine("Se actualizo");
+            }
+            else
+            {
+                Console.WriteLine("Ocurrio un error");
+            }
         }
         public void listarPlan()
         {
@@ -53,34 +125,57 @@ namespace Sistema_Prestamos.Transaccion
         }
         private void AgregarPlan()
         {
-            try
+            Double saldo = Convert.ToDouble(txtSaldoCuenta.Text.Trim());    
+            Double monTo = Convert.ToDouble(txtTotalPago.Text.Trim());
+            string idCu = txtIdCuenta.Text.Trim();
+            if (saldo < monTo)
             {
-                Plan_Pago c = new Plan_Pago();
-                c.mesPlan = Convert.ToInt32(txtMesPlan.Text.Trim());
-                c.capitalRemanente = Convert.ToDouble(txtCapRemanente.Text.Trim());
-                c.capitalDevolver = Convert.ToDouble(txtCapDevolver.Text.Trim());
-                c.interes = Convert.ToDouble(txtInteresPLan.Text);
-                c.totalPago = Convert.ToDouble(txtTotalPago.Text);
-                c.fechPago = Convert.ToDateTime(dtpFechaPlan.Text);
-                c.idConsolidado = txtIdConsolidado.Text.Trim();
-                logPlan.Instancia.InsertarPlan(c);
+                MessageBox.Show("No tiene saldo suficiente");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro.." + ex);
+                try
+                {
+                    Plan_Pago c = new Plan_Pago();
+                    c.mesPlan = Convert.ToInt32(txtMesPlan.Text.Trim());
+                    c.capitalRemanente = Convert.ToDouble(txtCapRemanente.Text.Trim());
+                    c.capitalDevolver = Convert.ToDouble(txtCapDevolver.Text.Trim());
+                    c.interes = Convert.ToDouble(txtInteresPLan.Text);
+                    c.totalPago = Convert.ToDouble(txtTotalPago.Text);
+                    c.fechPago = Convert.ToDateTime(dtpFechaPlan.Text);
+                    c.idConsolidado = txtIdConsolidado.Text.Trim();
+                    logPlan.Instancia.InsertarPlan(c);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro.." + ex);
+                }
+                listarPlan();
+                LimpiarVaraiblesConsolidado();
+                LimpiarVariables();
+                ActulizarTotalCapDevolver();
+                ActulizarTotalInteres();
+                ActulizarTotalPago();
+                Actualizarsaldo();
+                logCuenta.Instancia.spActualizarSaldo(idCu, monTo);
+
             }
-            listarPlan();
+            
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AgregarPlan();    
+            AgregarPlan();
+            
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             txtCapDevolver.Enabled = true;
             txtInteresPLan.Enabled = true;
+            
             
         }
 
@@ -131,12 +226,13 @@ namespace Sistema_Prestamos.Transaccion
             Double CapD = Convert.ToDouble(txtCapDevolver.Text.Trim());
             Double Inte = Convert.ToDouble(txtInteresPLan.Text.Trim());
             Double total = CapD + Inte;
-            txtTotalPago.Text = total.ToString();
+            txtTotalPago.Text = total.ToString("N2");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             CalcularMes();
+            
             int mesPlan = Convert.ToInt32(txtMesPlan.Text);
             int mesAnt = mesPlan - 1;
 
@@ -151,40 +247,55 @@ namespace Sistema_Prestamos.Transaccion
             capital = Convert.ToDouble(txtMontoPrestamo.Text.Trim());
             CapDev = capital / mesCon;
 
-            if (mesPlan == 1)
+            string dato = Convert.ToString(txtIdConsolidado.Text.Trim());
+            int mes = logPlan.Instancia.CalcularMes(dato);
+            
+            if (mesCon==mes)
             {
-                txtCapRemanente.Text = capital.ToString();
-                txtCapDevolver.Text = CapDev.ToString();
-                CapRem = Convert.ToDouble(txtCapRemanente.Text.Trim());
-                Inte = CapRem * 0.1;
-                txtInteresPLan.Text = Inte.ToString("N2");
-                CalcularTotalPago();
+                MessageBox.Show("Ya cumplio con todos los pagos");
             }
             else
             {
-                string idCon = txtIdConsolidado.Text.Trim();
-                Double OCapRem = logPlan.Instancia.ObtenerCapRemanente(idCon, mesAnt);
-                Double ResCapDev = logPlan.Instancia.ObtenerCapDevolver(idCon, mesAnt);
-                Double ResInt = logPlan.Instancia.ObtenerInteres(idCon, mesAnt);
-
-                ResInt = (OCapRem * 0.1) - ResInt;
-                CapRem = OCapRem - ResCapDev + ResInt;
-                ResCapDev = ResCapDev - (capital/mesCon);
-                txtCapRemanente.Text = CapRem.ToString();
-                if ((ResCapDev == 0) || ((capital/mesCon)==ResCapDev))
+                if (mesPlan == 1)
                 {
-                    txtCapDevolver.Text = (capital/mesCon).ToString(); 
+                    txtCapRemanente.Text = capital.ToString();
+                    txtCapDevolver.Text = CapDev.ToString("N2");
+                    CapRem = Convert.ToDouble(txtCapRemanente.Text.Trim());
+                    Inte = CapRem * 0.1;
+                    txtInteresPLan.Text = Inte.ToString("N2");
+                    CalcularTotalPago();
                 }
                 else
                 {
-                    CapDev = (capital / mesCon) + ResCapDev;
-                    txtCapDevolver.Text = CapDev.ToString();
-                }
+                    string idCon = txtIdConsolidado.Text.Trim();
+                    Double OCapRem = logPlan.Instancia.ObtenerCapRemanente(idCon, mesAnt);
+                    Double ResCapDev = logPlan.Instancia.ObtenerCapDevolver(idCon, mesAnt);
+                    Double ResInt = logPlan.Instancia.ObtenerInteres(idCon, mesAnt);
 
-                Inte = CapRem * 0.1;
-                txtInteresPLan.Text = Inte.ToString();
-                CalcularTotalPago();
+                    ResInt = (OCapRem * 0.1) - ResInt;
+                    CapRem = OCapRem - ResCapDev + ResInt;
+                    ResCapDev = ResCapDev - (capital / mesCon);
+                    txtCapRemanente.Text = CapRem.ToString();
+                    if ((ResCapDev == 0) || ((capital / mesCon) == ResCapDev))
+                    {
+                        txtCapDevolver.Text = (capital / mesCon).ToString("N2");
+                    }
+                    else
+                    {
+                        CapDev = (capital / mesCon) + (ResCapDev*-1);
+                        txtCapDevolver.Text = CapDev.ToString("N2");
+                    }
+
+                    Inte = CapRem * 0.1;
+                    txtInteresPLan.Text = Inte.ToString("N2");
+                    CalcularTotalPago();
+                    
+                }
+                
             }
+            
+
+
 
         }
 
@@ -193,6 +304,10 @@ namespace Sistema_Prestamos.Transaccion
             LimpiarVariables();
             gbPlan.Enabled = false;
             
+        }
+
+        private void txtTotalPago_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

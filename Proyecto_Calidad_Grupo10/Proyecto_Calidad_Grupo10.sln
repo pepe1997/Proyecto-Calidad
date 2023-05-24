@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNego
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_Prestamos", "Sistema_Prestamos\Sistema_Prestamos.csproj", "{D9D392A4-C552-4265-AADB-48CC6287F9F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entLogin", "entLogin\entLogin.csproj", "{D5A2A779-0D1C-45BF-8726-CF921E1D871A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{D9D392A4-C552-4265-AADB-48CC6287F9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D392A4-C552-4265-AADB-48CC6287F9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9D392A4-C552-4265-AADB-48CC6287F9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A2A779-0D1C-45BF-8726-CF921E1D871A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A2A779-0D1C-45BF-8726-CF921E1D871A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A2A779-0D1C-45BF-8726-CF921E1D871A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A2A779-0D1C-45BF-8726-CF921E1D871A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{3C52D066-1F7C-4DDB-8AF9-8744C771F946} = {6087EB65-F786-4835-A378-C873A87A5E55}
 		{DC300874-9320-4255-86F9-EAF934C2DC62} = {72C58232-FBFB-4592-B149-C477D2B8E612}
 		{D9D392A4-C552-4265-AADB-48CC6287F9F7} = {08F6F40E-0D44-4CE3-9141-2D31B0CBB6D4}
+		{D5A2A779-0D1C-45BF-8726-CF921E1D871A} = {6087EB65-F786-4835-A378-C873A87A5E55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CB47A70-021C-4E60-B280-6E42C361ABB3}
