@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.MaskedTextBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.txtUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,90 +42,85 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.txtContra = new System.Windows.Forms.MaskedTextBox();
+            this.lbCelular = new System.Windows.Forms.Label();
+            this.lbContraseña = new System.Windows.Forms.Label();
+            this.lbApellido = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.txtVerificarCaptcha = new System.Windows.Forms.MaskedTextBox();
+            this.txtCaptcha = new System.Windows.Forms.MaskedTextBox();
+            this.lbVerificarCaptcha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(175, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtNombre.Location = new System.Drawing.Point(175, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(193, 22);
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // maskedTextBox1
+            // txtApellido
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(175, 136);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(193, 22);
-            this.maskedTextBox1.TabIndex = 1;
+            this.txtApellido.Location = new System.Drawing.Point(175, 136);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(193, 22);
+            this.txtApellido.TabIndex = 1;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
-            // maskedTextBox2
+            // txtCelular
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(175, 207);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(193, 22);
-            this.maskedTextBox2.TabIndex = 2;
+            this.txtCelular.Location = new System.Drawing.Point(175, 207);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(193, 22);
+            this.txtCelular.TabIndex = 2;
+            this.txtCelular.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCelular_MaskInputRejected);
+            this.txtCelular.TextChanged += new System.EventHandler(this.txtCelular_TextChanged);
+            this.txtCelular.Layout += new System.Windows.Forms.LayoutEventHandler(this.txtCelular_Layout);
+            this.txtCelular.MouseEnter += new System.EventHandler(this.txtCelular_MouseEnter);
             // 
-            // maskedTextBox3
+            // txtUsuario
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(175, 282);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(193, 22);
-            this.maskedTextBox3.TabIndex = 3;
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Location = new System.Drawing.Point(175, 282);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(193, 22);
+            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsuario_MaskInputRejected);
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.MouseEnter += new System.EventHandler(this.txtUsuario_MouseEnter);
             // 
-            // comboBox1
+            // cmbRol
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(175, 412);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Items.AddRange(new object[] {
+            "Administrador",
+            "Empleado"});
+            this.cmbRol.Location = new System.Drawing.Point(175, 412);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(193, 24);
+            this.cmbRol.TabIndex = 4;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(175, 533);
+            this.btnRegistrar.Location = new System.Drawing.Point(175, 570);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(84, 23);
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrar.MouseEnter += new System.EventHandler(this.btnRegistrar_MouseEnter);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(293, 533);
+            this.btnCancelar.Location = new System.Drawing.Point(293, 570);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(175, 458);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(29, 22);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(221, 458);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(29, 22);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(278, 458);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(29, 22);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(339, 458);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(29, 22);
-            this.textBox5.TabIndex = 10;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
@@ -194,39 +185,109 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Contraseña";
             // 
-            // maskedTextBox4
+            // txtContra
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(175, 345);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(193, 22);
-            this.maskedTextBox4.TabIndex = 17;
+            this.txtContra.Location = new System.Drawing.Point(175, 345);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(193, 22);
+            this.txtContra.TabIndex = 17;
+            this.txtContra.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtContra_MaskInputRejected);
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
+            this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContra_KeyPress);
+            this.txtContra.MouseEnter += new System.EventHandler(this.txtContra_MouseEnter);
+            // 
+            // lbCelular
+            // 
+            this.lbCelular.AutoSize = true;
+            this.lbCelular.Location = new System.Drawing.Point(387, 213);
+            this.lbCelular.Name = "lbCelular";
+            this.lbCelular.Size = new System.Drawing.Size(0, 16);
+            this.lbCelular.TabIndex = 19;
+            this.lbCelular.Visible = false;
+            // 
+            // lbContraseña
+            // 
+            this.lbContraseña.AutoSize = true;
+            this.lbContraseña.Location = new System.Drawing.Point(387, 348);
+            this.lbContraseña.Name = "lbContraseña";
+            this.lbContraseña.Size = new System.Drawing.Size(0, 16);
+            this.lbContraseña.TabIndex = 20;
+            this.lbContraseña.Visible = false;
+            // 
+            // lbApellido
+            // 
+            this.lbApellido.AutoSize = true;
+            this.lbApellido.Location = new System.Drawing.Point(387, 139);
+            this.lbApellido.Name = "lbApellido";
+            this.lbApellido.Size = new System.Drawing.Size(0, 16);
+            this.lbApellido.TabIndex = 21;
+            this.lbApellido.Visible = false;
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Location = new System.Drawing.Point(387, 79);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(0, 16);
+            this.lbNombre.TabIndex = 22;
+            this.lbNombre.Visible = false;
+            // 
+            // txtVerificarCaptcha
+            // 
+            this.txtVerificarCaptcha.Location = new System.Drawing.Point(175, 520);
+            this.txtVerificarCaptcha.Name = "txtVerificarCaptcha";
+            this.txtVerificarCaptcha.Size = new System.Drawing.Size(193, 22);
+            this.txtVerificarCaptcha.TabIndex = 23;
+            this.txtVerificarCaptcha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtVerificarCaptcha_MaskInputRejected);
+            this.txtVerificarCaptcha.TextChanged += new System.EventHandler(this.txtVerificarCaptcha_TextChanged);
+            // 
+            // txtCaptcha
+            // 
+            this.txtCaptcha.Enabled = false;
+            this.txtCaptcha.Location = new System.Drawing.Point(175, 464);
+            this.txtCaptcha.Name = "txtCaptcha";
+            this.txtCaptcha.Size = new System.Drawing.Size(193, 22);
+            this.txtCaptcha.TabIndex = 24;
+            // 
+            // lbVerificarCaptcha
+            // 
+            this.lbVerificarCaptcha.AutoSize = true;
+            this.lbVerificarCaptcha.Location = new System.Drawing.Point(387, 526);
+            this.lbVerificarCaptcha.Name = "lbVerificarCaptcha";
+            this.lbVerificarCaptcha.Size = new System.Drawing.Size(0, 16);
+            this.lbVerificarCaptcha.TabIndex = 25;
+            this.lbVerificarCaptcha.Visible = false;
             // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 639);
+            this.Controls.Add(this.lbVerificarCaptcha);
+            this.Controls.Add(this.txtCaptcha);
+            this.Controls.Add(this.txtVerificarCaptcha);
+            this.Controls.Add(this.lbNombre);
+            this.Controls.Add(this.lbApellido);
+            this.Controls.Add(this.lbContraseña);
+            this.Controls.Add(this.lbCelular);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.txtContra);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbRol);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Name = "FrmRegistro";
             this.Text = "FrmRegistro";
+            this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,17 +295,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.MaskedTextBox txtApellido;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.MaskedTextBox txtUsuario;
+        private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -252,6 +309,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox txtContra;
+        private System.Windows.Forms.Label lbCelular;
+        private System.Windows.Forms.Label lbContraseña;
+        private System.Windows.Forms.Label lbApellido;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.MaskedTextBox txtVerificarCaptcha;
+        private System.Windows.Forms.MaskedTextBox txtCaptcha;
+        private System.Windows.Forms.Label lbVerificarCaptcha;
     }
 }

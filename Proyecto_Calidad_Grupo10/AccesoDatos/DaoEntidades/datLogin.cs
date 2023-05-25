@@ -90,11 +90,72 @@ namespace AccesoDatos.DaoEntidades
         public Boolean ValidarNumeroCelular(string numeroCelular)
         {
             
-            string patron = @"^[1-9]\d{8}$";
+            string patron = @"^[9]\d{8}$";
             Regex regex = new Regex(patron);
             bool esValido = regex.IsMatch(numeroCelular);
 
             return esValido;
+        }
+
+        public Boolean VerificarPassword(string pass)
+        {
+            if (pass.Length < 8)
+            {
+                return false;
+            }
+            if (!pass.Any(char.IsUpper))
+            {
+                return false;
+            }
+            if (!pass.Any(char.IsLower))
+            {
+                return false;
+            }   
+            if (!pass.Any(char.IsDigit))
+            {
+                return false;
+            }
+            if (!pass.Any(IsSpecialCharacter))
+            {
+                return false;
+            }  
+
+            return true;
+        }
+
+        public Boolean IsSpecialCharacter(char c)
+        {
+            return !char.IsLetterOrDigit(c);
+        }
+
+        public Boolean ValidarNombres(string nombre)
+        {
+            if (nombre.Length < 2)
+                return false;
+
+            foreach (char c in nombre)
+            {
+                if ((!char.IsLetter(c)) && (c != ' '))
+                { 
+                    return false;
+                }
+                    
+            }
+
+            return true;
+        }
+        public string GenerarLetrasAleatorias(int longitud)
+        {
+            Random random = new Random();
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < longitud; i++)
+            {
+                char letra = (char)random.Next('A', 'Z' + 1); // Generar letra mayúscula aleatoria
+                sb.Append(letra);
+            }
+
+            return sb.ToString();
         }
 
         #endregion metodos

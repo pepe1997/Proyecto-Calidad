@@ -41,6 +41,18 @@ namespace LogicaNegocio
         {
             return datLogin.Instancia.ValidarNumeroCelular(num);
         }
+        public Boolean VerificarPassword(string pass)
+        {
+            return datLogin.Instancia.VerificarPassword(pass);
+        }
+        public Boolean ValidarNombres(string n)
+        {
+            return datLogin.Instancia.ValidarNombres(n);
+        }
+        public string GenerarLetras(int lon)
+        {
+            return datLogin.Instancia.GenerarLetrasAleatorias(lon);
+        }
 
         #endregion metodos
     }
