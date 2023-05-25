@@ -31,6 +31,16 @@ namespace Sistema_Prestamos.Principal
         {
             
         }
+        private void LimpiarVariable()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtCelular.Text = "";
+            txtUsuario.Text = "";
+            txtContra.Text = "";
+            txtCaptcha.Text = "";
+            txtVerificarCaptcha.Text = "";
+        }
        
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -38,6 +48,7 @@ namespace Sistema_Prestamos.Principal
             if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto") && (lbContraseña.Text == "Fuerte") && (lbVerificarCaptcha.Text=="Correcto"))
             {
                 InsertarUsuario();
+                
             }
             else
             {
@@ -62,6 +73,7 @@ namespace Sistema_Prestamos.Principal
             {
                 MessageBox.Show("Erro.." + ex);
             }
+
         }
 
         private void txtUsuario_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -145,6 +157,7 @@ namespace Sistema_Prestamos.Principal
 
         private void txtContra_MouseEnter(object sender, EventArgs e)
         {
+            txtUsuario.Text = "";
             GenerarUsurio();
             string cadena = string.Join("", usuario);
             txtUsuario.Text = cadena;
