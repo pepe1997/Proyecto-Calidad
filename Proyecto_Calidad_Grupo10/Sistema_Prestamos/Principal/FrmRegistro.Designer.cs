@@ -50,6 +50,7 @@
             this.txtVerificarCaptcha = new System.Windows.Forms.MaskedTextBox();
             this.txtCaptcha = new System.Windows.Forms.MaskedTextBox();
             this.lbVerificarCaptcha = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -81,12 +82,13 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Enabled = false;
             this.txtUsuario.Location = new System.Drawing.Point(175, 282);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(193, 22);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsuario_MaskInputRejected);
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             this.txtUsuario.MouseEnter += new System.EventHandler(this.txtUsuario_MouseEnter);
             // 
@@ -105,7 +107,7 @@
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(175, 570);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(84, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(84, 33);
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -116,7 +118,7 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(293, 570);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 33);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -258,11 +260,21 @@
             this.lbVerificarCaptcha.TabIndex = 25;
             this.lbVerificarCaptcha.Visible = false;
             // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Location = new System.Drawing.Point(387, 285);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(0, 16);
+            this.lbUsuario.TabIndex = 26;
+            this.lbUsuario.Visible = false;
+            // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 639);
+            this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.lbVerificarCaptcha);
             this.Controls.Add(this.txtCaptcha);
             this.Controls.Add(this.txtVerificarCaptcha);
@@ -317,5 +329,6 @@
         private System.Windows.Forms.MaskedTextBox txtVerificarCaptcha;
         private System.Windows.Forms.MaskedTextBox txtCaptcha;
         private System.Windows.Forms.Label lbVerificarCaptcha;
+        private System.Windows.Forms.Label lbUsuario;
     }
 }

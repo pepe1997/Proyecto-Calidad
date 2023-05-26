@@ -45,9 +45,21 @@ namespace Sistema_Prestamos.Principal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto") && (lbContraseña.Text == "Fuerte") && (lbVerificarCaptcha.Text=="Correcto"))
+            if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto") && (lbContraseña.Text == "Fuerte") && (lbVerificarCaptcha.Text=="Correcto")&&((lbUsuario.Text == "Correcto")))
             {
                 InsertarUsuario();
+                LimpiarVariable();
+                lbNombre.Visible = false;
+                lbApellido.Visible = false;
+                lbCelular.Visible = false;
+                lbContraseña.Visible = false;
+                lbVerificarCaptcha.Visible = false;
+                lbUsuario.Visible = false;
+                MessageBox.Show("Se registro correctamente");
+                this.Hide();
+                FrmLogin f = new FrmLogin();
+                f.Show();
+                
                 
             }
             else
@@ -84,6 +96,16 @@ namespace Sistema_Prestamos.Principal
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons botones = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Estas seguro de salir","Salir",
+                botones,MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                this.Hide();
+                FrmLogin f = new FrmLogin();
+                f.Show();
+            }
+
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)
@@ -93,7 +115,10 @@ namespace Sistema_Prestamos.Principal
 
         private void txtUsuario_MouseEnter(object sender, EventArgs e)
         {
-            
+            txtUsuario.Text = "";
+            GenerarUsurio();
+            string cadena = string.Join("", usuario);
+            txtUsuario.Text = cadena;
         }
 
         private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,39 +127,47 @@ namespace Sistema_Prestamos.Principal
         }
         private void GenerarUsurio()
         {
-            string nombre = txtNombre.Text.Replace(" ", "").ToLower();
-            string apelldo = txtApellido.Text.Replace(" ", "").ToLower();
-            string celular = txtCelular.Text.Replace(" ", "").Trim();
-            int c = 0;
-            int j = 0;
-
-
-            for (int i = 0; i < nombre.Length; i++)
+            if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto"))
             {
-                if (i <= 2)
-                {
-                    usuario[i] = nombre[i];
-                }
-            }
-            for (int i = 0; i < apelldo.Length; i++)
-            {
-                if ((i > 2) && (i <= 5))
-                {
+                string nombre = txtNombre.Text.Replace(" ", "").ToLower();
+                string apelldo = txtApellido.Text.Replace(" ", "").ToLower();
+                string celular = txtCelular.Text.Replace(" ", "").Trim();
+                int c = 0;
+                int j = 0;
 
-                    usuario[i] = apelldo[j];
-                    j++;
-                }
-            }
-            j = 0;
-            for (int i = 0; i <= celular.Length; i++)
-            {
-                if ((i > 5) && (i <= 7))
-                {
-                    usuario[i] = celular[j];
-                    j++;
-                }
 
+                for (int i = 0; i < 3; i++)
+                {
+                    if (usuario.Length == 0)
+                    {
+                        usuario[0] = nombre[i];
+                    }
+                    else
+                    {
+                        usuario[i] = nombre[i];
+                    }
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    usuario[3 + i] = apelldo[i];
+
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    usuario[6 + i] = celular[i];
+
+                }
+                lbUsuario.ForeColor = Color.Green;
+                lbUsuario.Text = "Correcto";
+                lbUsuario.Visible = true;
             }
+            else
+            {
+                lbUsuario.ForeColor = Color.Red;
+                lbUsuario.Text = "Falta llenar un campo";
+                lbUsuario.Visible = true;
+            }
+            
         }
         private void ValidadCelular()
         {
@@ -157,10 +190,7 @@ namespace Sistema_Prestamos.Principal
 
         private void txtContra_MouseEnter(object sender, EventArgs e)
         {
-            txtUsuario.Text = "";
-            GenerarUsurio();
-            string cadena = string.Join("", usuario);
-            txtUsuario.Text = cadena;
+            
             
         }
 
@@ -271,6 +301,11 @@ namespace Sistema_Prestamos.Principal
                 lbVerificarCaptcha.Text = "Incorrecto";
                 lbVerificarCaptcha.Visible = true;
             }
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
