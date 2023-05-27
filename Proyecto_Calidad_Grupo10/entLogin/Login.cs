@@ -15,6 +15,7 @@ namespace entLogin
         public string usuario { get; set; }
         public string contra { get; set; }
         public string rol { get; set;}
+        public string estado { get; set; }
 
         public Login()
         {

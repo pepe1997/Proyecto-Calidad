@@ -51,6 +51,7 @@
             this.txtCaptcha = new System.Windows.Forms.MaskedTextBox();
             this.lbVerificarCaptcha = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -82,9 +83,9 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Location = new System.Drawing.Point(175, 282);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(193, 22);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsuario_MaskInputRejected);
@@ -191,6 +192,7 @@
             // 
             this.txtContra.Location = new System.Drawing.Point(175, 345);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(193, 22);
             this.txtContra.TabIndex = 17;
             this.txtContra.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtContra_MaskInputRejected);
@@ -269,11 +271,22 @@
             this.lbUsuario.TabIndex = 26;
             this.lbUsuario.Visible = false;
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(484, 281);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerar.TabIndex = 27;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 639);
+            this.ClientSize = new System.Drawing.Size(602, 639);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.lbVerificarCaptcha);
             this.Controls.Add(this.txtCaptcha);
@@ -330,5 +343,6 @@
         private System.Windows.Forms.MaskedTextBox txtCaptcha;
         private System.Windows.Forms.Label lbVerificarCaptcha;
         private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }

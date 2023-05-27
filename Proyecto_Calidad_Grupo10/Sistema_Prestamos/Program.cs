@@ -19,7 +19,7 @@ namespace Sistema_Prestamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRegistro());
+            Application.Run(new FrmConsolidado());
         }
     }
 }

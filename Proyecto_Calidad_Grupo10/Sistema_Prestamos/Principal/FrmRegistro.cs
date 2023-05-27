@@ -115,10 +115,8 @@ namespace Sistema_Prestamos.Principal
 
         private void txtUsuario_MouseEnter(object sender, EventArgs e)
         {
-            txtUsuario.Text = "";
-            GenerarUsurio();
-            string cadena = string.Join("", usuario);
-            txtUsuario.Text = cadena;
+            
+
         }
 
         private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
@@ -157,15 +155,11 @@ namespace Sistema_Prestamos.Principal
                     usuario[6 + i] = celular[i];
 
                 }
-                lbUsuario.ForeColor = Color.Green;
-                lbUsuario.Text = "Correcto";
-                lbUsuario.Visible = true;
+
             }
             else
             {
-                lbUsuario.ForeColor = Color.Red;
-                lbUsuario.Text = "Falta llenar un campo";
-                lbUsuario.Visible = true;
+                MessageBox.Show("Falta rellenar algun casillero");
             }
             
         }
@@ -226,10 +220,9 @@ namespace Sistema_Prestamos.Principal
 
         private void txtContra_TextChanged(object sender, EventArgs e)
         {
-            
-            string cont = string.Join("", txtContra.Text);
-            bool v = logLogin.Instancia.VerificarPassword(cont);
-            if (v == true)
+            string cont1 = txtContra.Text.Trim();
+            bool v1 = logLogin.Instancia.VerificarPassword(cont1);
+            if (v1 == true)
             {
                 lbContraseña.ForeColor = Color.Green;
                 lbContraseña.Text = "Fuerte";
@@ -245,7 +238,7 @@ namespace Sistema_Prestamos.Principal
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            string nomb = string.Join("", txtNombre.Text);
+            string nomb = txtNombre.Text.Trim();
             bool v = logLogin.Instancia.ValidarNombres(nomb);
             if (v == true)
             {
@@ -263,7 +256,7 @@ namespace Sistema_Prestamos.Principal
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
-            string apell = string.Join("", txtApellido.Text);
+            string apell = txtApellido.Text.Trim();
             bool v = logLogin.Instancia.ValidarNombres(apell);
             if (v == true)
             {
@@ -277,6 +270,7 @@ namespace Sistema_Prestamos.Principal
                 lbApellido.Text = "Incorrecto";
                 lbApellido.Visible = true;
             }
+
         }
 
         private void txtVerificarCaptcha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -305,6 +299,60 @@ namespace Sistema_Prestamos.Principal
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
+            
+            string usu = txtUsuario.Text.Trim();
+            bool v = logLogin.Instancia.VerificarUsuario(usu);
+            if (usu.Length < 9)
+            {
+                if (logLogin.Instancia.EncontrarUsuario(usu)>=1)
+                {
+                    
+                        lbUsuario.ForeColor = Color.Red;
+                        lbUsuario.Text = "Incorrecto";
+                        lbUsuario.Visible = true;
+
+                    
+                }
+                else if (v == true)
+                {
+                    lbUsuario.ForeColor = Color.Green;
+                    lbUsuario.Text = "Correcto";
+                    lbUsuario.Visible = true;
+                }
+                else if(v==false)
+                {
+                    lbUsuario.ForeColor = Color.Red;
+                    lbUsuario.Text = "Incorrecto";
+                    lbUsuario.Visible = true;
+                }
+            }
+            else
+            {
+                lbUsuario.ForeColor = Color.Red;
+                lbUsuario.Text = "Incorrecto";
+                lbUsuario.Visible = true;
+                MessageBox.Show("Te exediste");
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            GenerarUsurio();
+            string cadena = string.Join("", usuario);
+            txtUsuario.Text = cadena;
+
+            int j = logLogin.Instancia.EncontrarUsuario(cadena);
+            if (j >= 1)
+            {
+                MessageBox.Show("Genera un nuevo usuario, solo debe contener letras minuscula y numeros");
+                txtUsuario.Enabled = true;
+                btnGenerar.Visible = false;
+                lbUsuario.ForeColor = Color.Red;
+                lbUsuario.Text = "Incorrecto";
+                
+            }
 
         }
     }

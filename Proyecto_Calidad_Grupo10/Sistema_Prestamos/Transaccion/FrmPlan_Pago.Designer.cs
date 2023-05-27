@@ -34,8 +34,9 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.dgvPlan = new System.Windows.Forms.DataGridView();
             this.gbConsolidado = new System.Windows.Forms.GroupBox();
+            this.txtMontoPrestamo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSaldoCuenta = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtIdCuenta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMesConsolidado = new System.Windows.Forms.TextBox();
@@ -59,8 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtMontoPrestamo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.gbConsolidado.SuspendLayout();
@@ -124,7 +123,6 @@
             this.gbConsolidado.Controls.Add(this.txtMontoPrestamo);
             this.gbConsolidado.Controls.Add(this.label2);
             this.gbConsolidado.Controls.Add(this.txtSaldoCuenta);
-            this.gbConsolidado.Controls.Add(this.label12);
             this.gbConsolidado.Controls.Add(this.txtIdCuenta);
             this.gbConsolidado.Controls.Add(this.label3);
             this.gbConsolidado.Controls.Add(this.txtMesConsolidado);
@@ -138,21 +136,29 @@
             this.gbConsolidado.TabStop = false;
             this.gbConsolidado.Text = "Consolidado";
             // 
+            // txtMontoPrestamo
+            // 
+            this.txtMontoPrestamo.Location = new System.Drawing.Point(282, 97);
+            this.txtMontoPrestamo.Name = "txtMontoPrestamo";
+            this.txtMontoPrestamo.Size = new System.Drawing.Size(104, 22);
+            this.txtMontoPrestamo.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Monto";
+            // 
             // txtSaldoCuenta
             // 
             this.txtSaldoCuenta.Location = new System.Drawing.Point(79, 152);
             this.txtSaldoCuenta.Name = "txtSaldoCuenta";
             this.txtSaldoCuenta.Size = new System.Drawing.Size(68, 22);
             this.txtSaldoCuenta.TabIndex = 16;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 155);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 16);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Saldo";
+            this.txtSaldoCuenta.Visible = false;
             // 
             // txtIdCuenta
             // 
@@ -368,22 +374,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Id";
             // 
-            // txtMontoPrestamo
-            // 
-            this.txtMontoPrestamo.Location = new System.Drawing.Point(282, 97);
-            this.txtMontoPrestamo.Name = "txtMontoPrestamo";
-            this.txtMontoPrestamo.Size = new System.Drawing.Size(104, 22);
-            this.txtMontoPrestamo.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Monto";
-            // 
             // FrmPlan_Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -433,7 +423,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpFechaPlan;
         private System.Windows.Forms.TextBox txtMesPlan;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtIdConsolidado;
         public System.Windows.Forms.TextBox txtMesConsolidado;
