@@ -295,6 +295,7 @@
             this.txtInteresPLan.Name = "txtInteresPLan";
             this.txtInteresPLan.Size = new System.Drawing.Size(97, 22);
             this.txtInteresPLan.TabIndex = 10;
+            this.txtInteresPLan.TextChanged += new System.EventHandler(this.txtInteresPLan_TextChanged);
             // 
             // txtCapDevolver
             // 
@@ -303,6 +304,7 @@
             this.txtCapDevolver.Name = "txtCapDevolver";
             this.txtCapDevolver.Size = new System.Drawing.Size(112, 22);
             this.txtCapDevolver.TabIndex = 9;
+            this.txtCapDevolver.TextChanged += new System.EventHandler(this.txtCapDevolver_TextChanged);
             // 
             // txtCapRemanente
             // 
