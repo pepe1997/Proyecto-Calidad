@@ -291,59 +291,35 @@ namespace Sistema_Prestamos.Transaccion
 
                     ResInt = (OCapRem * 0.1) - ResInt;
                     CapRem = OCapRem - ResCapDev + ResInt;
-                    //ResCapDev = ResCapDev - (capital / mesCon);
                     txtCapRemanente.Text = CapRem.ToString();
-                    int cap = Convert.ToInt32(capital / mesCon);
-                    int rCapDev = Convert.ToInt32(ResCapDev);
-                    if (cap == rCapDev)
+                    for (int i = 2; i <= mesPlan; i++)
                     {
-                        txtCapDevolver.Text = (capital / mesCon).ToString("N2");
-                    }
-                    else
-                    {
-                        double capi = capital/ mesCon;
-                        for (int i = 2; i <= mesPlan; i++)
+                        if (i == mesPlan)
                         {
-                            if (i == mesPlan)
+                            double capiDev = capital / mesCon;
+                            double m = mesPlan - 1;
+                            double cDevAnt = capiDev * m;
+                            //double cDevAct = capiDev * i;
+                            double sumCapDev = CalcularTotalCapDevolver();
+                            if (sumCapDev == cDevAnt)
                             {
-                                double x = 0;
-                                double ant= 0;
-                                ant = capi * (i - 1);
-                                x = (capi*i)-(ResCapDev*(i-1));
-                                if (x==0)
-                                {
-                                    txtCapDevolver.Text = (capi).ToString();
-                                }
-                                else
-                                {
-                                    x =ant-ResCapDev;
-                                    x = (capi * i) - x;
-                                    txtCapDevolver.Text = (x).ToString();
-                                }
-                                
-
+                                txtCapDevolver.Text = capiDev.ToString();
+                            }
+                            else
+                            {
+                                double x = cDevAnt - sumCapDev;
+                                x = capiDev + x;
+                                txtCapDevolver.Text= x.ToString();
                             }
                             
                         }
-                        
-                        if (ResCapDev > 0)
-                        {
                             
-                            CapDev = (capital / mesCon) + ResCapDev;
-                            txtCapDevolver.Text = CapDev.ToString("N2");
-                        }
-                        else
-                        {
-                            CapDev = (capital / mesCon) + (ResCapDev * -1);
-                            txtCapDevolver.Text = CapDev.ToString("N2");
-                        }
-
                     }
+
 
                     Inte = CapRem * 0.1;
                     txtInteresPLan.Text = Inte.ToString("N2");
                     CalcularTotalPago();
-                    
                 }
                 
             }
