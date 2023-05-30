@@ -37,49 +37,54 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(78, 23);
+            this.txtDni.Location = new System.Drawing.Point(58, 19);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(155, 22);
+            this.txtDni.Size = new System.Drawing.Size(117, 20);
             this.txtDni.TabIndex = 5;
             this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(16, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 16);
+            this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "DNI";
             // 
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(22, 76);
+            this.dgvCliente.Location = new System.Drawing.Point(16, 62);
+            this.dgvCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.RowHeadersWidth = 51;
             this.dgvCliente.RowTemplate.Height = 24;
-            this.dgvCliente.Size = new System.Drawing.Size(756, 401);
+            this.dgvCliente.Size = new System.Drawing.Size(567, 326);
             this.dgvCliente.TabIndex = 3;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick);
             // 
             // txtFormulario
             // 
-            this.txtFormulario.Location = new System.Drawing.Point(352, 26);
+            this.txtFormulario.Location = new System.Drawing.Point(264, 21);
+            this.txtFormulario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFormulario.Name = "txtFormulario";
-            this.txtFormulario.Size = new System.Drawing.Size(153, 22);
+            this.txtFormulario.Size = new System.Drawing.Size(116, 20);
             this.txtFormulario.TabIndex = 6;
             // 
             // FrmBuscarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(600, 406);
             this.Controls.Add(this.txtFormulario);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCliente);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmBuscarCliente";
             this.Text = "FrmBuscarCliente";
             this.Load += new System.EventHandler(this.FrmBuscarCliente_Load);

@@ -18,7 +18,7 @@ namespace AccesoDatos.DataBase
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=LAPTOP-O97J1N7E;Initial Catalog = Banco;" + "Integrated Security = true";
+            cn.ConnectionString = "Data Source=DESKTOP-AB7LPA7;Initial Catalog = Banco;" + "Integrated Security = true";
             Console.WriteLine("Se extablecio conexion");
             Console.ReadLine();
             return cn;

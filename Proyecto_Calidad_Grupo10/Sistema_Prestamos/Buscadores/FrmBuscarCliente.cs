@@ -75,5 +75,6 @@ namespace Sistema_Prestamos.Buscadores
         {
 
         }
+
     }
 }
