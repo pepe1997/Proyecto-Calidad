@@ -41,6 +41,61 @@ namespace LogicaNegocio
         {
             return datLogin.Instancia.ValidarNumeroCelular(num);
         }
+        public Boolean VerificarPassword(string pass)
+        {
+            return datLogin.Instancia.VerificarPassword(pass);
+        }
+        public Boolean VerificarUsuario(string usu)
+        {
+            return datLogin.Instancia.VerificarUsuario(usu);
+        }
+        public Boolean ValidarNombres(string n)
+        {
+            return datLogin.Instancia.ValidarNombres(n);
+        }
+        public string GenerarLetras(int lon)
+        {
+            return datLogin.Instancia.GenerarLetrasAleatorias(lon);
+        }
+
+        public void DeshabilitarUsuario(Login log)
+        {
+            datLogin.Instancia.DeshabilitarUsuario(log);
+        }
+        public void HabilitarUsuario(Login log)
+        {
+            datLogin.Instancia.HabilitarUsuario(log);
+        }
+        public void HabilitarUsuarioCel(Login log)
+        {
+            datLogin.Instancia.HabilitarUsuarioCel(log);
+        }
+        public void CambiarContra(string usu,string pass)
+        {
+            datLogin.Instancia.CambiarContra(usu,pass);
+        }
+        public void CambiarContraCel(string cel, string pass)
+        {
+            datLogin.Instancia.CambiarContraCel(cel, pass);
+        }
+        public int EncontrarUsuario(string dato)
+        {
+            return datLogin.Instancia.EncontrarUsuario(dato);
+        }
+        public int EncontrarCelular(string dato)
+        {
+            return datLogin.Instancia.EncontrarCelular(dato);
+        }
+
+        public int EncontrarUsuarioDeshabilitado(string dato)
+        {
+            return datLogin.Instancia.EncontrarUsuarioDeshabilitado(dato);
+        }
+        public int EncontrarCelularDeshabilitado(string dato)
+        {
+            return datLogin.Instancia.EncontrarCelularDeshabilitado(dato);
+        }
+
 
         #endregion metodos
     }

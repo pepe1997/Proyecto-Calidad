@@ -112,6 +112,12 @@
     <Compile Include="Principal\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\FrmRecuperarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\FrmRecuperarCuenta.Designer.cs">
+      <DependentUpon>FrmRecuperarCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal\FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\FrmRecuperarCuenta.resx">
+      <DependentUpon>FrmRecuperarCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>

@@ -43,6 +43,10 @@ namespace LogicaNegocio
         {
             return datPlan.Instancia.CalcularMes(dato);
         }
+        public int CalcularPagoCapDevolver(string dato)
+        {
+            return datPlan.Instancia.CalcularPagoCapDevolver(dato);
+        }
         public double ObtenerCapRemanente(string dato, int mes)
         {
             return datPlan.Instancia.ObtenerCapRemanente(dato,mes);

@@ -394,6 +394,41 @@ namespace AccesoDatos.DaoEntidades
             return totalPago;
         }
 
+        public int CalcularPagoCapDevolver(string dato)
+        {
+            SqlCommand cmd = null;
+            int capDev = 1;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularPagoCapDevolver", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idConsolidado", dato);
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    capDev = Convert.ToInt32(dr["capitalDevolver"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + capDev);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return capDev;
+
+
+        }
+
         #endregion metodos
     }
 }

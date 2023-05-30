@@ -291,22 +291,35 @@ namespace Sistema_Prestamos.Transaccion
 
                     ResInt = (OCapRem * 0.1) - ResInt;
                     CapRem = OCapRem - ResCapDev + ResInt;
-                    ResCapDev = ResCapDev - (capital / mesCon);
-                    txtCapRemanente.Text = CapRem.ToString();
-                    if ((ResCapDev == 0) || ((capital / mesCon) == ResCapDev))
+                    txtCapRemanente.Text = CapRem.ToString("N2");
+                    for (int i = 2; i <= mesPlan; i++)
                     {
-                        txtCapDevolver.Text = (capital / mesCon).ToString("N2");
+                        if (i == mesPlan)
+                        {
+                            double capiDev = capital / mesCon;
+                            double m = mesPlan - 1;
+                            double cDevAnt = capiDev * m;
+                            //double cDevAct = capiDev * i;
+                            double sumCapDev = CalcularTotalCapDevolver();
+                            if (sumCapDev == cDevAnt)
+                            {
+                                txtCapDevolver.Text = capiDev.ToString("N2");
+                            }
+                            else
+                            {
+                                double x = cDevAnt - sumCapDev;
+                                x = capiDev + x;
+                                txtCapDevolver.Text= x.ToString("N2");
+                            }
+                            
+                        }
+                            
                     }
-                    else
-                    {
-                        CapDev = (capital / mesCon) + (ResCapDev*-1);
-                        txtCapDevolver.Text = CapDev.ToString("N2");
-                    }
+
 
                     Inte = CapRem * 0.1;
                     txtInteresPLan.Text = Inte.ToString("N2");
                     CalcularTotalPago();
-                    
                 }
                 
             }
@@ -328,6 +341,14 @@ namespace Sistema_Prestamos.Transaccion
         private void txtTotalPago_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCapDevolver_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtInteresPLan_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
