@@ -291,7 +291,7 @@ namespace Sistema_Prestamos.Transaccion
 
                     ResInt = (OCapRem * 0.1) - ResInt;
                     CapRem = OCapRem - ResCapDev + ResInt;
-                    txtCapRemanente.Text = CapRem.ToString();
+                    txtCapRemanente.Text = CapRem.ToString("N2");
                     for (int i = 2; i <= mesPlan; i++)
                     {
                         if (i == mesPlan)
@@ -303,13 +303,13 @@ namespace Sistema_Prestamos.Transaccion
                             double sumCapDev = CalcularTotalCapDevolver();
                             if (sumCapDev == cDevAnt)
                             {
-                                txtCapDevolver.Text = capiDev.ToString();
+                                txtCapDevolver.Text = capiDev.ToString("N2");
                             }
                             else
                             {
                                 double x = cDevAnt - sumCapDev;
                                 x = capiDev + x;
-                                txtCapDevolver.Text= x.ToString();
+                                txtCapDevolver.Text= x.ToString("N2");
                             }
                             
                         }
