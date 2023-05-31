@@ -311,6 +311,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Name = "FrmRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistro";
             this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.ResumeLayout(false);
