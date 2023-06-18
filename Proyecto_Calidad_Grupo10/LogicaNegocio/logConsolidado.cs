@@ -55,7 +55,13 @@ namespace LogicaNegocio
         {
             return datConsolidado.Instancia.ActualizarMontTotal(dato, capDev);
         }
+        public int CalcularNumConsolidado()
+        {
+            return datConsolidado.Instancia.CalcularNumConsolidado();
+        }
+
+        #endregion metodos
     }
-    #endregion metodos
+
 }
 

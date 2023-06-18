@@ -22,7 +22,7 @@ namespace Sistema_Prestamos.Principal
         {
             InitializeComponent();
             txtCaptcha.Text = logLogin.Instancia.GenerarLetras(10);
-            
+
 
 
         }

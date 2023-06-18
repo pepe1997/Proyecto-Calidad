@@ -162,6 +162,38 @@ namespace Sistema_Prestamos.Mantendedor
             txtIdCliente.Text = filaActual.Cells[3].Value.ToString();
         }
 
+        private void generarId()
+        {
+            char[] id = { 'P', 'R', '0', '0', '0' };
+            int Num = logPrestamo.Instancia.CalcularNumPrestamo();
+
+            string n = (Num + 1).ToString();
+            if (Num == 0)
+            {
+
+                id[4] = '1';
+            }
+            else if (Num < 9)
+            {
+                id[4] = n[0];
+
+            }
+            else if ((Num > 9) && (Num < 100))
+            {
+
+                id[3] = n[0];
+                id[4] = n[1];
+            }
+            else
+            {
+                id[2] = n[0];
+                id[3] = n[1];
+                id[4] = n[2];
+            }
+            string cadena = string.Join("", id);
+            txtIdPrestamo.Text = cadena;
+
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             cmbEstadoPrestamo.SelectedIndex = 0;
@@ -172,6 +204,8 @@ namespace Sistema_Prestamos.Mantendedor
             LimpiarVariables();
             LimpiarVariabllesCliente();
             btnModificar.Visible = false;
+            txtIdPrestamo.Enabled=false;
+            generarId();
         }
 
         private void button1_Click(object sender, EventArgs e)

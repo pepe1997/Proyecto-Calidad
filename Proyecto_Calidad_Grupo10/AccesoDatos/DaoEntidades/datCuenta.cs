@@ -182,6 +182,40 @@ namespace AccesoDatos.DaoEntidades
             return actualiza;
         }
 
+        public int CalcularNumCuenta()
+        {
+            SqlCommand cmd = null;
+            int numCue = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularCuenta", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    numCue = Convert.ToInt32(dr["numCuenta"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + numCue);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return numCue;
+
+
+        }
+
         #endregion metodos
     }
 }

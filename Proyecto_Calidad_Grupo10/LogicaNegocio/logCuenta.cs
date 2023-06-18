@@ -48,6 +48,11 @@ namespace LogicaNegocio
             return datCuenta.Instancia.ActualizarSaldo(dato, saldo);
         }
 
+        public int CalcularNumCuenta()
+        {
+            return datCuenta.Instancia.CalcularNumCuenta();
+        }
+
     }
     #endregion metodos
 }

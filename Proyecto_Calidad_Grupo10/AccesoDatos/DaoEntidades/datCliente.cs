@@ -190,7 +190,41 @@ namespace AccesoDatos.DaoEntidades
             }
             return lista;
         }
-       
+
+        public int CalcularNumClientes()
+        {
+            SqlCommand cmd = null;
+            int numClie = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularCliente", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    numClie = Convert.ToInt32(dr["numClientes"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + numClie);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return numClie;
+
+
+        }
+
 
         #endregion metodos
     }

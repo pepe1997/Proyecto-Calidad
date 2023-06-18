@@ -35,5 +35,17 @@ namespace Sistema_Prestamos.Principal
             FrmPrestamo prestamo = new FrmPrestamo();
             prestamo.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmConsolidado c = new FrmConsolidado();
+            c.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,6 +42,11 @@ namespace LogicaNegocio
             return datCliente.Instancia.BuscarCliente(dato);
 
         }
+
+        public int CalcularNumCliente()
+        {
+            return datCliente.Instancia.CalcularNumClientes();
+        }
         public void DeshabilitarCliente(Cliente c)
         {
             datCliente.Instancia.DeshabilitarCliente(c);

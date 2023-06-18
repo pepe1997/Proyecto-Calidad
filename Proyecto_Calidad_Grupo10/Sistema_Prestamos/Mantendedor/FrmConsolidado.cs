@@ -215,6 +215,38 @@ namespace Sistema_Prestamos.Mantendedor
             fc.Show();
         }
 
+        private void generarId()
+        {
+            char[] id = { 'C', 'O', '0', '0', '0' };
+            int Num = logConsolidado.Instancia.CalcularNumConsolidado();
+
+            string n = (Num + 1).ToString();
+            if (Num == 0)
+            {
+
+                id[4] = '1';
+            }
+            else if (Num < 9)
+            {
+                id[4] = n[0];
+
+            }
+            else if ((Num > 9) && (Num < 100))
+            {
+
+                id[3] = n[0];
+                id[4] = n[1];
+            }
+            else
+            {
+                id[2] = n[0];
+                id[3] = n[1];
+                id[4] = n[2];
+            }
+            string cadena = string.Join("", id);
+            txtIdConsolidado.Text = cadena;
+
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var randon = new Random();
@@ -230,6 +262,8 @@ namespace Sistema_Prestamos.Mantendedor
             gbPrestamo.Enabled = true;
             btnAgregar.Visible = true;
             btnCancelar.Visible = true;
+            txtIdConsolidado.Enabled = false;
+            generarId();
 
         }
 

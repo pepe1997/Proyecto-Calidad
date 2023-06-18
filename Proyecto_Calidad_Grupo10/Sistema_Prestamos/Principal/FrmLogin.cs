@@ -50,9 +50,11 @@ namespace Sistema_Prestamos.Principal
                         bot, MessageBoxIcon.Warning);
                     if (d == DialogResult.OK)
                     {
-                        this.Hide();
+                        
                         FrmRegistro r = new FrmRegistro();
                         r.Show();
+                        this.Hide();
+                        
                     }
                 }
             }
@@ -73,15 +75,35 @@ namespace Sistema_Prestamos.Principal
                         bot, MessageBoxIcon.Warning);
                     if (d == DialogResult.OK)
                     {
-                        this.Hide();
+            
                         FrmRecuperarCuenta r = new FrmRecuperarCuenta();
                         r.Show();
+                        this.Hide();
                     }
                 }
             }
             else if ((txtUsuario.Text == "") || (txtContra.Text == "")||(txtVerificarCaptcha.Text==""))
             {
                 MessageBox.Show("Falta rellenar un campo");
+            }
+            else if (lbUsuario.Text == "Suspendido")
+            {
+                MessageBoxButtons botones = MessageBoxButtons.OK;
+                DialogResult dr = MessageBox.Show("Exediste el numero de intentos y su cuenta se suspendio", "Advertencia",
+                    botones, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    MessageBoxButtons bot = MessageBoxButtons.OKCancel;
+                    DialogResult d = MessageBox.Show("Deseas Recuperar tu Cuenta", "Sugerencia",
+                        bot, MessageBoxIcon.Warning);
+                    if (d == DialogResult.OK)
+                    {
+                       
+                        FrmRecuperarCuenta r = new FrmRecuperarCuenta();
+                        r.Show();
+                        this.Hide();
+                    }
+                }
             }
             else
             {
@@ -93,12 +115,14 @@ namespace Sistema_Prestamos.Principal
                 }
                 if ((v == "Administrador") && (txtVerificarCaptcha.Text == cap))
                 {
+                    
                     FrmPrincipal f = new FrmPrincipal();
                     f.Show();
                     this.Hide();
                 }
                 if ((v == "Empleado") && (txtVerificarCaptcha.Text == cap))
                 {
+                    
                     FrmConsolidado c = new FrmConsolidado();
                     c.Show();
                     this.Hide();
@@ -115,7 +139,7 @@ namespace Sistema_Prestamos.Principal
                 botones, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                this.Hide();
+                this.Close();
                 FrmRegistro f = new FrmRegistro();
                 f.Show();
             }
@@ -143,7 +167,7 @@ namespace Sistema_Prestamos.Principal
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            this.Close();
             FrmRecuperarCuenta f = new FrmRecuperarCuenta();
             f.Show();
             
@@ -153,10 +177,16 @@ namespace Sistema_Prestamos.Principal
         {
             string usu = txtUsuario.Text.ToLower().Trim();
             int v = logLogin.Instancia.EncontrarUsuario(usu);
+            int v1 = logLogin.Instancia.EncontrarUsuarioDeshabilitado(usu);
             if (v > 0)
             {
                 lbUsuario.ForeColor = Color.Green;
                 lbUsuario.Text = "Correcto";
+                lbUsuario.Visible = true;
+            }else if (v1>0)
+            {
+                lbUsuario.ForeColor = Color.Red;
+                lbUsuario.Text = "Suspendido";
                 lbUsuario.Visible = true;
             }
             else
