@@ -22,7 +22,7 @@ namespace Sistema_Prestamos.Principal
         {
             InitializeComponent();
             txtCaptcha.Text = logLogin.Instancia.GenerarLetras(10);
-            
+
 
 
         }
@@ -45,27 +45,34 @@ namespace Sistema_Prestamos.Principal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto") && (lbContraseña.Text == "Fuerte") && (lbVerificarCaptcha.Text=="Correcto")&&((lbUsuario.Text == "Correcto")))
+            MessageBoxButtons botones = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Acepta los terminos y condiciones", "Declaratoria de Privacidad",
+                botones, MessageBoxIcon.Information);
+            if (dr == DialogResult.OK)
             {
-                InsertarUsuario();
-                LimpiarVariable();
-                lbNombre.Visible = false;
-                lbApellido.Visible = false;
-                lbCelular.Visible = false;
-                lbContraseña.Visible = false;
-                lbVerificarCaptcha.Visible = false;
-                lbUsuario.Visible = false;
-                MessageBox.Show("Se registro correctamente");
-                this.Hide();
-                FrmLogin f = new FrmLogin();
-                f.Show();
-                
-                
+                if ((lbNombre.Text == "Correcto") && (lbApellido.Text == "Correcto") && (lbCelular.Text == "Correcto") && (lbContraseña.Text == "Fuerte") && (lbVerificarCaptcha.Text == "Correcto") && ((lbUsuario.Text == "Correcto")))
+                {
+                    InsertarUsuario();
+                    LimpiarVariable();
+                    lbNombre.Visible = false;
+                    lbApellido.Visible = false;
+                    lbCelular.Visible = false;
+                    lbContraseña.Visible = false;
+                    lbVerificarCaptcha.Visible = false;
+                    lbUsuario.Visible = false;
+                    MessageBox.Show("Se registro correctamente");
+                    this.Hide();
+                    FrmLogin f = new FrmLogin();
+                    f.Show();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Presenta error en al campo");
+                }
             }
-            else
-            {
-                MessageBox.Show("Presenta error en al campo");
-            }
+            
 
         }
         private void InsertarUsuario()

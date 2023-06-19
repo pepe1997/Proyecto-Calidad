@@ -188,6 +188,39 @@ namespace Sistema_Prestamos.Mantendedor
             listarCuenta();
         }
 
+        private void generarId()
+        {
+            char[] id = { 'C', 'U', '0', '0', '0' };
+            int Num = logCuenta.Instancia.CalcularNumCuenta();
+
+            string n = (Num + 1).ToString();
+            if (Num == 0)
+            {
+
+                id[4] = '1';
+            }
+            else if (Num < 9)
+            {
+                id[4] = n[0];
+
+            }
+            else if ((Num > 9) && (Num < 100))
+            {
+
+                id[3] = n[0];
+                id[4] = n[1];
+            }
+            else
+            {
+                id[2] = n[0];
+                id[3] = n[1];
+                id[4] = n[2];
+            }
+            string cadena = string.Join("", id);
+            txtIdCuenta.Text = cadena;
+
+        }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             gbCliente.Enabled = true;
@@ -195,10 +228,13 @@ namespace Sistema_Prestamos.Mantendedor
             gbCuenta.Enabled = true;
             btnModificar.Visible =false ;
             btnAgregar.Visible = true;
+            txtIdCuenta.Enabled = false;
+            generarId();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            txtIdCuenta.Text = "";
             gbCliente.Enabled = false;
             gbTipoCuenta.Enabled = false;
             gbCuenta.Enabled = true;

@@ -46,6 +46,37 @@ namespace Sistema_Prestamos.Mantendedor
         {
 
         }
+        private void generarId()
+        {
+            char[] id = {'C','L','0','0','0'};
+            int Num = logCliente.Instancia.CalcularNumCliente();
+            
+            string n = (Num+1).ToString();
+            if(Num== 0)
+            {
+
+                id[4] = '1';
+            }
+            else if (Num < 9)
+            {
+                id[4]=n[0];
+
+            }else if((Num>9) && (Num < 100))
+            {
+                
+                id[3] = n[0];
+                id[4]= n[1];
+            }
+            else
+            {
+                id[2] = n[0];
+                id[3] = n[1];
+                id[4] = n[2];
+            }
+            string cadena = string.Join("",id);
+            txtId.Text = cadena;
+
+        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -54,6 +85,8 @@ namespace Sistema_Prestamos.Mantendedor
             LimpiarVariables();
             btnModificar.Visible = false;
             txtId.Enabled = true;
+            txtId.Enabled = false;
+            generarId();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

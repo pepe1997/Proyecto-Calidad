@@ -63,7 +63,12 @@ namespace LogicaNegocio
             datPrestamo.Instancia.CambiarEsatdoDenegado(Pres);
         }
 
+        public int CalcularNumPrestamo()
+        {
+            return datPrestamo.Instancia.CalcularNumPrestamo();
+        }
+        #endregion metodos
     }
-    #endregion metodos
+
 }
 

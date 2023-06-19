@@ -31,16 +31,16 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtVerificarCaptcha = new System.Windows.Forms.TextBox();
-            this.lbCaptcha = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.txtCaptcha = new System.Windows.Forms.MaskedTextBox();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.lbUsuario = new System.Windows.Forms.Label();
+            this.lbCaptcha = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -71,24 +71,6 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(215, 349);
@@ -107,15 +89,6 @@
             this.txtVerificarCaptcha.Size = new System.Drawing.Size(133, 23);
             this.txtVerificarCaptcha.TabIndex = 7;
             this.txtVerificarCaptcha.TextChanged += new System.EventHandler(this.txtVerificarCaptcha_TextChanged);
-            // 
-            // lbCaptcha
-            // 
-            this.lbCaptcha.AutoSize = true;
-            this.lbCaptcha.Location = new System.Drawing.Point(23, 193);
-            this.lbCaptcha.Name = "lbCaptcha";
-            this.lbCaptcha.Size = new System.Drawing.Size(57, 16);
-            this.lbCaptcha.TabIndex = 8;
-            this.lbCaptcha.Text = "Captcha";
             // 
             // linkLabel1
             // 
@@ -141,6 +114,7 @@
             // 
             // txtCaptcha
             // 
+            this.txtCaptcha.Enabled = false;
             this.txtCaptcha.Location = new System.Drawing.Point(121, 187);
             this.txtCaptcha.Name = "txtCaptcha";
             this.txtCaptcha.ReadOnly = true;
@@ -167,6 +141,33 @@
             this.lbUsuario.TabIndex = 13;
             this.lbUsuario.Visible = false;
             // 
+            // lbCaptcha
+            // 
+            this.lbCaptcha.AutoSize = true;
+            this.lbCaptcha.Location = new System.Drawing.Point(23, 193);
+            this.lbCaptcha.Name = "lbCaptcha";
+            this.lbCaptcha.Size = new System.Drawing.Size(57, 16);
+            this.lbCaptcha.TabIndex = 8;
+            this.lbCaptcha.Text = "Captcha";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Contraseña";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Usuario";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +187,7 @@
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
@@ -198,15 +200,15 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtVerificarCaptcha;
-        private System.Windows.Forms.Label lbCaptcha;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.MaskedTextBox txtCaptcha;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Label lbCaptcha;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

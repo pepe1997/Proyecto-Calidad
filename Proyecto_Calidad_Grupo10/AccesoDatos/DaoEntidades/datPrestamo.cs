@@ -262,6 +262,40 @@ namespace AccesoDatos.DaoEntidades
             return cambiar;
         }
 
+        public int CalcularNumPrestamo()
+        {
+            SqlCommand cmd = null;
+            int numPres = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularNumPrestamo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    numPres = Convert.ToInt32(dr["numPrestamo"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + numPres);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return numPres;
+
+
+        }
+
 
         #endregion metodos
     }

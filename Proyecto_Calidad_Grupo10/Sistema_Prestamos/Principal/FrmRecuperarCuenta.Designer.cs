@@ -200,6 +200,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Name = "FrmRecuperarCuenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRecuperarCuenta";
             this.Load += new System.EventHandler(this.FrmRecuperarCuenta_Load);
             this.ResumeLayout(false);

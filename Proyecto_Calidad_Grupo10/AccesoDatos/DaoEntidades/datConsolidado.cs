@@ -242,6 +242,40 @@ namespace AccesoDatos.DaoEntidades
             return actualiza;
         }
 
+        public int CalcularNumConsolidado()
+        {
+            SqlCommand cmd = null;
+            int numCon = 0;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar(); //singleton
+                cmd = new SqlCommand("spCalcularNumConsolidado", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    numCon = Convert.ToInt32(dr["numConsolidado"].ToString());
+                    Console.WriteLine("El número de meses en el plan de pago es: " + numCon);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return numCon;
+
+
+        }
+
 
         #endregion metodos
     }
